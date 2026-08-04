@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #feb324;
+  --color-blue: #2596be;
+  --color-navy: #0F172A;
+  --color-light: #F8FAFC;
+  --color-border-custom: #E5E7EB;
+  --color-text-custom: #111827;
+
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #111827;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #feb324;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2596be;
+}
+
+/* Luxury visual accents */
+.divider-gold {
+  position: relative;
+}
+
+.divider-gold::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #feb324;
+  margin-top: 1rem;
+}
+
+/* Soft Gloss Glassmorphism Utilities */
+.gloss-card-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 231, 235, 0.6);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04),
+    0 1px 3px rgba(15, 23, 42, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.gloss-card-dark {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3),
+    0 1px 3px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.multi-shadow-premium {
+  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.08),
+    0 10px 20px -5px rgba(15, 23, 42, 0.03),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.multi-shadow-gold {
+  box-shadow: 0 25px 50px -12px rgba(254, 179, 36, 0.15),
+    0 4px 12px rgba(254, 179, 36, 0.05);
+}
+
+.luxury-glow-blue {
+  filter: drop-shadow(0 0 30px rgba(37, 150, 190, 0.15));
+}

@@ -1,0 +1,16 @@
+# Apache Configuration for Next.js Static Export
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Redirect /index.html to /
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # 2. Check if a corresponding .html file exists for the requested path (ignoring trailing slash)
+  # If it exists, rewrite to it immediately. This prevents Apache from doing directory slash redirects.
+  # %1 captures the path without the trailing slash (e.g. "about" from "/about/" or "/about")
+  RewriteCond %{REQUEST_URI} ^/(.+)/?$
+  RewriteCond %{DOCUMENT_ROOT}/%1.html -f
+  RewriteRule ^(.*)$ /%1.html [L]
+</IfModule>
