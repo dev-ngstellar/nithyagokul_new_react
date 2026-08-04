@@ -120,6 +120,7 @@ export default function Header() {
     { name: "About Us", href: "/about" },
     { name: "Trademark & IP", href: "/trademark" },
     { name: "Careers", href: "/careers" },
+    { name: "Template", href: "/templates" },
     { name: "Blog", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
   ];
@@ -254,7 +255,7 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* ── REGISTRATIONS dropdown (unchanged style) ── */}
+            {/* ── REGISTRATIONS dropdown ── */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("registrations")}
@@ -313,10 +314,10 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Remaining simple links */}
-            {["Trademark & IP", "Careers", "Blog", "Contact Us"].map((name) => {
+            {/* Remaining simple links: Trademark & IP -> Careers -> Template -> Blog -> Contact Us */}
+            {["Trademark & IP", "Careers", "Template", "Blog", "Contact Us"].map((name) => {
               const link = otherLinks.find((l) => l.name === name)!;
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates"));
               return (
                 <Link
                   key={name}
@@ -397,7 +398,6 @@ export default function Header() {
                     className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
                   />
                 </button>
-
                 <AnimatePresence>
                   {mobileServicesOpen && (
                     <motion.div
@@ -476,18 +476,19 @@ export default function Header() {
                 </AnimatePresence>
               </div>
 
-              {/* Remaining links */}
-              {["Trademark & IP", "Careers", "Blog", "Contact Us"].map((name) => {
+              {/* Remaining links in mobile drawer */}
+              {["Trademark & IP", "Careers", "Template", "Blog", "Contact Us"].map((name) => {
                 const link = otherLinks.find((l) => l.name === name)!;
-                const isActive = pathname === link.href;
+                const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates"));
                 return (
                   <Link
                     key={name}
                     href={link.href}
+                    onClick={() => setIsOpen(false)}
                     className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${isActive ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
                       }`}
                   >
-                    {name}
+                    {link.name}
                   </Link>
                 );
               })}

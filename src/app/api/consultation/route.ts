@@ -29,6 +29,14 @@ export async function POST(req: Request) {
     const adminTemplate = createAdminNotificationTemplate("Consultation Request", emailData);
     const autoReplyTemplate = createAutoReplyTemplate(name, "Consultation");
 
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.warn("SMTP environment variables EMAIL_USER / EMAIL_PASS are missing.");
+      return NextResponse.json(
+        { error: "Email service is temporarily unconfigured. Please add EMAIL_USER and EMAIL_PASS to your environment file." },
+        { status: 500 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
@@ -57,8 +65,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true, message: "Email sent successfully" });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Consultation Email Error:", error);
-    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+    return NextResponse.json({ error: error?.message || "Failed to send email" }, { status: 500 });
   }
 }
