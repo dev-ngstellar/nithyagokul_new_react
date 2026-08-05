@@ -53,48 +53,24 @@ export default function InteractiveHero() {
   ];
 
   const [isMobile, setIsMobile] = useState(false);
-  const [activeCycleIdx, setActiveCycleIdx] = useState<number>(0);
-  const timerRef = React.useRef<NodeJS.Timeout | null>(null);
+  const [mobileIdx, setMobileIdx] = useState<number>(0);
   const [mounted, setMounted] = useState(false);
-
-  const startTimer = React.useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setActiveCycleIdx((prev) => (prev + 1) % panels.length);
-    }, 4000);
-  }, [panels.length]);
 
   React.useEffect(() => {
     setMounted(true);
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024); // Trigger auto-cycle on mobile & tablet
+      setIsMobile(window.innerWidth < 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
-      if (timerRef.current) clearInterval(timerRef.current);
     };
   }, []);
 
-  React.useEffect(() => {
-    if (isMobile) {
-      startTimer();
-    } else {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
-      }
-    }
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [isMobile, startTimer]);
-
   const handlePanelInteraction = (idx: number) => {
     if (isMobile) {
-      setActiveCycleIdx(idx);
-      startTimer(); // Reset auto-scroll timer on manual tap
+      setMobileIdx(idx);
     } else {
       setHoveredIdx(idx);
     }
@@ -102,17 +78,17 @@ export default function InteractiveHero() {
 
   if (!mounted) {
     return (
-      <section className="relative w-full h-[95vh] min-h-[600px] lg:h-[95vh] lg:min-h-[650px] overflow-hidden bg-navy select-none" />
+      <section className="relative w-full h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] min-h-[550px] max-h-[900px] overflow-hidden bg-navy select-none" />
     );
   }
 
   return (
-    <section className="relative w-full h-[95vh] min-h-[600px] lg:h-[95vh] lg:min-h-[650px] overflow-hidden bg-navy select-none">
+    <section className="relative w-full h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] min-h-[550px] max-h-[900px] overflow-hidden bg-navy select-none">
       {/* Background Images Layer with Smooth Crossfade */}
       <div className="absolute inset-0 z-0">
         {panels.map((panel, idx) => {
           const isVisible = isMobile
-            ? activeCycleIdx === idx
+            ? mobileIdx === idx
             : hoveredIdx === idx || (hoveredIdx === null && idx === 0);
           return (
             <motion.div
@@ -162,11 +138,11 @@ export default function InteractiveHero() {
                       backgroundColor: isActive ? "rgba(255, 255, 255, 0.08)" : "rgba(255, 255, 255, 0)",
                       backdropFilter: isActive ? "blur(14px)" : "blur(0px)",
                       borderColor: isActive ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0)",
-                      paddingLeft: isActive ? "3rem" : "3rem",
-                      paddingRight: isActive ? "3rem" : "3rem",
+                      paddingLeft: isActive ? "2.25rem" : "1.75rem",
+                      paddingRight: isActive ? "2.25rem" : "1.75rem",
                     }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-full py-12 space-y-4 border-t border-transparent z-30"
+                    className="w-full py-6 md:py-8 lg:py-10 space-y-3 md:space-y-4 border-t border-transparent z-30"
                   >
                     {/* Number & Fraction Indicator */}
                     <div className="flex items-baseline gap-1.5 text-white/45 text-xs font-semibold tracking-wider font-sans">
@@ -184,10 +160,10 @@ export default function InteractiveHero() {
                     {/* Title */}
                     <motion.h3
                       animate={{
-                        opacity: currentActiveIdx !== null && !isActive ? 0.3 : 1,
+                        opacity: currentActiveIdx !== null && !isActive ? 0.35 : 1,
                       }}
                       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                      className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight"
+                      className="font-serif text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-white leading-tight"
                     >
                       {panel.title}
                     </motion.h3>
@@ -200,16 +176,16 @@ export default function InteractiveHero() {
                         opacity: isActive ? 1 : 0,
                       }}
                       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden space-y-4"
+                      className="overflow-hidden space-y-3 md:space-y-4"
                     >
-                      <p className="text-xs md:text-sm text-slate-200 leading-relaxed max-w-md pt-2">
+                      <p className="text-xs md:text-sm text-slate-200 leading-relaxed max-w-md pt-1">
                         {panel.desc}
                       </p>
 
-                      <div className="pt-2">
+                      <div className="pt-1">
                         <Link
                           href={panel.href}
-                          className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue text-white rounded-none text-xs font-semibold hover:bg-blue/90 transition-colors tracking-wider uppercase"
+                          className="inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 bg-blue text-white rounded-none text-xs font-semibold hover:bg-blue/90 transition-colors tracking-wider uppercase"
                         >
                           <span>Explore Services</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -230,7 +206,7 @@ export default function InteractiveHero() {
           <div className="relative z-20 w-full min-h-[320px] px-6 flex flex-col justify-end">
             <AnimatePresence mode="wait">
               <motion.div
-                key={activeCycleIdx}
+                key={mobileIdx}
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.02 }}
@@ -244,7 +220,7 @@ export default function InteractiveHero() {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
                   className="flex items-baseline gap-1.5 text-white/45 text-xs font-semibold tracking-wider font-sans"
                 >
-                  <span className="text-white text-sm font-serif">{panels[activeCycleIdx].num}</span>
+                  <span className="text-white text-sm font-serif">{panels[mobileIdx].num}</span>
                   <span>/04</span>
                 </motion.div>
 
@@ -263,7 +239,7 @@ export default function InteractiveHero() {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
                   className="font-serif text-[36px] md:text-[52px] lg:text-[64px] font-bold text-white leading-[1.1]"
                 >
-                  {panels[activeCycleIdx].title}
+                  {panels[mobileIdx].title}
                 </motion.h3>
 
                 {/* Description & Button */}
@@ -274,12 +250,12 @@ export default function InteractiveHero() {
                   className="space-y-6"
                 >
                   <p className="text-sm text-slate-200 leading-relaxed">
-                    {panels[activeCycleIdx].desc}
+                    {panels[mobileIdx].desc}
                   </p>
 
                   <div className="pt-2">
                     <Link
-                      href={panels[activeCycleIdx].href}
+                      href={panels[mobileIdx].href}
                       className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue text-white rounded-none text-xs font-semibold tracking-wider uppercase"
                     >
                       <span>Explore Services</span>
@@ -300,7 +276,7 @@ export default function InteractiveHero() {
             <button
               key={idx}
               onClick={() => handlePanelInteraction(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${activeCycleIdx === idx ? "bg-gold w-6" : "bg-white/40 w-2 hover:bg-white/60"
+              className={`h-2 rounded-full transition-all duration-300 ${mobileIdx === idx ? "bg-gold w-6" : "bg-white/40 w-2 hover:bg-white/60"
                 }`}
               aria-label={`Go to slide ${idx + 1}`}
             />

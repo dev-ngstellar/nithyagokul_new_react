@@ -129,14 +129,14 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md h-16 md:h-20 ${scrolled
-          ? "bg-navy/55 border-b border-white/10 shadow-xl shadow-navy/20"
-          : "bg-navy/100 border-b border-transparent"
+          ? "bg-navy/95 border-b border-white/10 shadow-xl shadow-navy/20"
+          : "bg-navy border-b border-transparent"
           }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-full relative gap-2.5">
-          {/* Logo */}
-          <div className="flex items-center h-full">
-            <div className="absolute left-6 top-1/2 -translate-y-1/2 z-50">
+        <div className="max-w-[1280px] mx-auto px-3 sm:px-6 flex items-center justify-between h-full relative">
+          {/* Ungrouped Large Logo (Absolutely Positioned) */}
+          <div className="flex items-center h-full relative z-50">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2">
               <Link href="/" className="flex items-center group shrink-0">
                 <Image
                   src="/nga_logo.png"
@@ -144,15 +144,16 @@ export default function Header() {
                   width={1080}
                   height={564}
                   priority
-                  className="object-contain transition-all duration-300 w-auto h-16 sm:h-20 md:h-24 lg:h-28"
+                  className="object-contain transition-all duration-300 w-auto h-12 sm:h-14 md:h-18 lg:h-20 xl:h-24 max-w-none"
                 />
               </Link>
             </div>
-            <div className="transition-all duration-300 shrink-0 w-32 sm:w-40 md:w-48 lg:w-56" />
+            {/* Spacer block to reserve width for nav items */}
+            <div className="w-28 sm:w-36 md:w-44 lg:w-48 xl:w-56 shrink-0" />
           </div>
 
           {/* ── Desktop Navigation ── */}
-          <nav className="hidden lg:flex items-center lg:gap-3 xl:gap-6">
+          <nav className="hidden xl:flex items-center gap-2 xl:gap-3.5 2xl:gap-5">
 
             {/* Home & About Us */}
             {["Home", "About Us"].map((name) => {
@@ -162,7 +163,7 @@ export default function Header() {
                 <Link
                   key={name}
                   href={link.href}
-                  className={`font-sans text-xs xl:text-sm font-medium tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                  className={`font-sans text-xs 2xl:text-sm font-medium tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                     }`}
                 >
                   {name}
@@ -178,12 +179,12 @@ export default function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-1 font-sans text-xs xl:text-sm font-medium tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isServicesActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                className={`flex items-center gap-0.5 font-sans text-xs 2xl:text-sm font-medium tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isServicesActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                   }`}
               >
                 Services
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === "services" ? "rotate-180" : ""
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === "services" ? "rotate-180" : ""
                     }`}
                 />
               </button>
@@ -207,6 +208,7 @@ export default function Header() {
                             <Link
                               href={cat.href}
                               key={cat.title}
+                              onClick={() => setActiveDropdown(null)}
                               className="group px-4 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/[0.04] hover:shadow-[0_4px_20px_-4px_rgba(197,155,80,0.15)] cursor-pointer block"
                             >
                               <div className="flex items-center gap-2 mb-2">
@@ -229,6 +231,7 @@ export default function Header() {
                       <div className="mx-5 mb-5 mt-1 border-t border-white/[0.06] pt-3">
                         <Link
                           href="/contact#consultation"
+                          onClick={() => setActiveDropdown(null)}
                           className="group flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-200 hover:bg-white/[0.03] hover:border-blue/30 cursor-pointer bg-gradient-to-r from-blue/10 via-blue/5 to-transparent border border-blue/10"
                         >
                           <div className="flex items-center gap-3">
@@ -262,12 +265,12 @@ export default function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-1 font-sans text-xs xl:text-sm font-medium tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isRegistrationsActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                className={`flex items-center gap-0.5 font-sans text-xs 2xl:text-sm font-medium tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isRegistrationsActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                   }`}
               >
                 Registrations
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === "registrations" ? "rotate-180" : ""
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === "registrations" ? "rotate-180" : ""
                     }`}
                 />
               </button>
@@ -290,6 +293,7 @@ export default function Header() {
                             <Link
                               href={item.href}
                               key={item.title}
+                              onClick={() => setActiveDropdown(null)}
                               className={`group px-5 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/[0.04] cursor-pointer block ${!isLastCol ? "border-r border-white/[0.07]" : ""
                                 }`}
                             >
@@ -314,7 +318,7 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Remaining simple links: Trademark & IP -> Careers -> Template -> Blog -> Contact Us */}
+            {/* Remaining simple links */}
             {["Trademark & IP", "Careers", "Template", "Blog", "Contact Us"].map((name) => {
               const link = otherLinks.find((l) => l.name === name)!;
               const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates"));
@@ -322,7 +326,7 @@ export default function Header() {
                 <Link
                   key={name}
                   href={link.href}
-                  className={`font-sans text-xs xl:text-sm font-medium tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                  className={`font-sans text-xs 2xl:text-sm font-medium tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                     }`}
                 >
                   {name}
@@ -332,26 +336,26 @@ export default function Header() {
           </nav>
 
           {/* ── Desktop CTAs ── */}
-          <div className="hidden lg:flex items-center lg:gap-3 xl:gap-5 shrink-0">
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-4 shrink-0 ml-1">
             <a
               href="tel:+919710909727"
-              className="flex items-center gap-1 text-white/90 hover:text-blue transition-colors font-sans text-xs xl:text-sm font-medium whitespace-nowrap"
+              className="flex items-center gap-1 text-white/90 hover:text-blue transition-colors font-sans text-xs 2xl:text-sm font-medium whitespace-nowrap"
             >
               <Phone className="w-3.5 h-3.5 text-blue shrink-0" />
               <span>+91 97109 09727</span>
             </a>
             <Link
               href="/contact#consultation"
-              className="px-3 xl:px-5 py-2.5 bg-blue text-white rounded-lg font-sans text-xs xl:text-sm font-semibold hover:bg-blue/90 transition-all duration-300 hover:shadow-lg hover:shadow-blue/20 whitespace-nowrap"
+              className="px-3 2xl:px-4 py-2 bg-blue text-white rounded-lg font-sans text-xs 2xl:text-sm font-semibold hover:bg-blue/90 transition-all duration-300 hover:shadow-lg hover:shadow-blue/20 whitespace-nowrap"
             >
               Request Consultation
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile / Tablet Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white/90 hover:text-gold transition-colors"
+            className="xl:hidden p-2 text-white/90 hover:text-gold transition-colors z-50 cursor-pointer"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -359,158 +363,173 @@ export default function Header() {
         </div>
       </header>
 
-      {/* ── Mobile Menu Drawer ── */}
+      {/* ── Mobile Menu Drawer & Overlay ── */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-y-0 right-0 w-full max-w-sm bg-navy z-40 shadow-2xl flex flex-col p-6 pt-24 border-l border-white/10"
-          >
-            <div className="flex-1 overflow-y-auto space-y-1 pr-1">
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+            />
+            <motion.div
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="fixed inset-y-0 right-0 w-full max-w-sm bg-navy z-50 shadow-2xl flex flex-col p-6 pt-20 border-l border-white/10"
+            >
+              <div className="flex-1 overflow-y-auto space-y-1 pr-1">
 
-              {/* Home & About */}
-              {[{ name: "Home", href: "/" }, { name: "About Us", href: "/about" }].map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${isActive ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
+                {/* Home & About */}
+                {[{ name: "Home", href: "/" }, { name: "About Us", href: "/about" }].map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${isActive ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
+                        }`}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
+
+                {/* ── SERVICES Accordion ── */}
+                <div className="border border-white/[0.08] rounded-xl overflow-hidden">
+                  <button
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className={`w-full flex items-center justify-between px-4 py-3.5 text-base font-medium transition-colors ${isServicesActive || mobileServicesOpen ? "text-gold bg-white/5" : "text-white/90 hover:text-gold"
                       }`}
                   >
-                    {link.name}
-                  </Link>
-                );
-              })}
+                    Services
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {mobileServicesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="overflow-hidden bg-white/[0.02] border-t border-white/[0.06]"
+                      >
+                        <div className="p-3 space-y-1">
+                          {megaMenuCategories.map((cat) => {
+                            const Icon = cat.icon;
+                            const isActive = pathname === cat.href;
+                            return (
+                              <Link
+                                key={cat.title}
+                                href={cat.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-colors border border-white/[0.06] rounded-xl overflow-hidden ${isActive ? "text-gold bg-white/[0.04]" : "text-white/80 hover:text-gold hover:bg-white/[0.04]"
+                                  }`}
+                              >
+                                <div className="w-6 h-6 rounded-md bg-gold/10 flex items-center justify-center shrink-0">
+                                  <Icon className="w-3.5 h-3.5 text-gold" />
+                                </div>
+                                <span className="flex-1 text-left">{cat.title}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
-              {/* ── SERVICES Accordion ── */}
-              <div className="border border-white/[0.08] rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className={`w-full flex items-center justify-between px-4 py-3.5 text-base font-medium transition-colors ${isServicesActive || mobileServicesOpen ? "text-gold bg-white/5" : "text-white/90 hover:text-gold"
-                    }`}
-                >
-                  Services
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
-                <AnimatePresence>
-                  {mobileServicesOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden bg-white/[0.02] border-t border-white/[0.06]"
-                    >
-                      <div className="p-3 space-y-1">
-                        {megaMenuCategories.map((cat) => {
-                          const Icon = cat.icon;
-                          const isActive = pathname === cat.href;
-                          return (
-                            <Link
-                              key={cat.title}
-                              href={cat.href}
-                              className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-colors border border-white/[0.06] rounded-xl overflow-hidden ${isActive ? "text-gold bg-white/[0.04]" : "text-white/80 hover:text-gold hover:bg-white/[0.04]"
-                                }`}
-                            >
-                              <div className="w-6 h-6 rounded-md bg-gold/10 flex items-center justify-center shrink-0">
-                                <Icon className="w-3.5 h-3.5 text-gold" />
-                              </div>
-                              <span className="flex-1 text-left">{cat.title}</span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* ── REGISTRATIONS Accordion ── */}
-              <div className="border border-white/[0.08] rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setMobileRegistrationsOpen(!mobileRegistrationsOpen)}
-                  className={`w-full flex items-center justify-between px-4 py-3.5 text-base font-medium transition-colors ${isRegistrationsActive || mobileRegistrationsOpen ? "text-gold bg-white/5" : "text-white/90 hover:text-gold"
-                    }`}
-                >
-                  Registrations
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${mobileRegistrationsOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
-                <AnimatePresence>
-                  {mobileRegistrationsOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden bg-white/[0.02] border-t border-white/[0.06]"
-                    >
-                      <div className="p-3 space-y-1">
-                        {registrationItems.map((item) => {
-                          const Icon = item.icon;
-                          const isActive = pathname === item.href;
-                          return (
-                            <Link
-                              key={item.title}
-                              href={item.href}
-                              className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-colors border border-white/[0.06] rounded-xl overflow-hidden ${isActive ? "text-gold bg-white/[0.04]" : "text-white/80 hover:text-gold hover:bg-white/[0.04]"
-                                }`}
-                            >
-                              <div className="w-6 h-6 rounded-md bg-gold/10 flex items-center justify-center shrink-0">
-                                <Icon className="w-3.5 h-3.5 text-gold" />
-                              </div>
-                              <span className="flex-1 text-left">{item.title}</span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Remaining links in mobile drawer */}
-              {["Trademark & IP", "Careers", "Template", "Blog", "Contact Us"].map((name) => {
-                const link = otherLinks.find((l) => l.name === name)!;
-                const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates"));
-                return (
-                  <Link
-                    key={name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${isActive ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
+                {/* ── REGISTRATIONS Accordion ── */}
+                <div className="border border-white/[0.08] rounded-xl overflow-hidden">
+                  <button
+                    onClick={() => setMobileRegistrationsOpen(!mobileRegistrationsOpen)}
+                    className={`w-full flex items-center justify-between px-4 py-3.5 text-base font-medium transition-colors ${isRegistrationsActive || mobileRegistrationsOpen ? "text-gold bg-white/5" : "text-white/90 hover:text-gold"
                       }`}
                   >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </div>
+                    Registrations
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${mobileRegistrationsOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {mobileRegistrationsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="overflow-hidden bg-white/[0.02] border-t border-white/[0.06]"
+                      >
+                        <div className="p-3 space-y-1">
+                          {registrationItems.map((item) => {
+                            const Icon = item.icon;
+                            const isActive = pathname === item.href;
+                            return (
+                              <Link
+                                key={item.title}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-colors border border-white/[0.06] rounded-xl overflow-hidden ${isActive ? "text-gold bg-white/[0.04]" : "text-white/80 hover:text-gold hover:bg-white/[0.04]"
+                                  }`}
+                              >
+                                <div className="w-6 h-6 rounded-md bg-gold/10 flex items-center justify-center shrink-0">
+                                  <Icon className="w-3.5 h-3.5 text-gold" />
+                                </div>
+                                <span className="flex-1 text-left">{item.title}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
-            {/* Mobile Footer CTAs */}
-            <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
-              <a
-                href="tel:+919710909727"
-                className="flex items-center justify-center gap-2 py-3 bg-white/5 rounded-lg text-white font-medium hover:bg-white/10 transition-colors"
-              >
-                <Phone className="w-4 h-4 text-blue" />
-                <span>+91 97109 09727</span>
-              </a>
-              <Link
-                href="/contact#consultation"
-                className="block text-center py-3 bg-blue text-white rounded-lg font-semibold hover:bg-blue/90 transition-colors"
-              >
-                Request Consultation
-              </Link>
-            </div>
-          </motion.div>
+                {/* Remaining links in mobile drawer */}
+                {["Trademark & IP", "Careers", "Template", "Blog", "Contact Us"].map((name) => {
+                  const link = otherLinks.find((l) => l.name === name)!;
+                  const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates"));
+                  return (
+                    <Link
+                      key={name}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${isActive ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
+                        }`}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Mobile Footer CTAs */}
+              <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
+                <a
+                  href="tel:+919710909727"
+                  className="flex items-center justify-center gap-2 py-3 bg-white/5 rounded-lg text-white font-medium hover:bg-white/10 transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-blue" />
+                  <span>+91 97109 09727</span>
+                </a>
+                <Link
+                  href="/contact#consultation"
+                  onClick={() => setIsOpen(false)}
+                  className="block text-center py-3 bg-blue text-white rounded-lg font-semibold hover:bg-blue/90 transition-colors"
+                >
+                  Request Consultation
+                </Link>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 
