@@ -25,14 +25,6 @@ const templateMetadata: Record<string, { title: string; description: string }> =
   "portfolio-new": {
     title: "Portfolio Template",
     description: "A clean, professional 3-page developer portfolio designed to showcase your skills, experience, and projects effectively."
-  },
-  "corporate-edge": {
-    title: "Consultancy Template",
-    description: "High-end corporate portfolio crafted for financial advisors, business consultancy firms, agencies, and independent strategists."
-  },
-  "medicare": {
-    title: "Medcare Template",
-    description: "A clean and modern alternative medical layout designed for quick appointments, clinics, and doctor showcases."
   }
 };
 
@@ -41,9 +33,7 @@ const desiredOrder = [
   "startup-landing-page",
   "freelancer",
   "photography",
-  "portfolio-new",
-  "corporate-edge",
-  "medicare"
+  "portfolio-new"
 ];
 
 // Custom priority ordering for template page screenshots
@@ -103,7 +93,7 @@ export async function getDynamicTemplates(): Promise<DynamicTemplateFolder[]> {
 
   try {
     const entries = await fs.readdir(templateDir, { withFileTypes: true });
-    const folders = entries.filter((e) => e.isDirectory());
+    const folders = entries.filter((e) => e.isDirectory() && desiredOrder.includes(e.name));
 
     const templates: DynamicTemplateFolder[] = [];
 
@@ -149,6 +139,10 @@ export async function getDynamicTemplates(): Promise<DynamicTemplateFolder[]> {
 }
 
 export async function getDynamicTemplateDetails(slug: string) {
+  if (!desiredOrder.includes(slug)) {
+    return null;
+  }
+
   const folderPath = path.join(process.cwd(), "public", "template-images", slug);
 
   try {
