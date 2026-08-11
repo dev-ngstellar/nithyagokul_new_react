@@ -1115,7 +1115,764 @@ export const categoriesData: CategoryData[] = [
       ogTitle: "Listed Company Services | Nithya Gokul Associates",
     },
   },
+
+  // ─────────────────────────────────────────────────────────
+  // CATEGORY 9: Digital Signature Certificate (DSC)
+  // ─────────────────────────────────────────────────────────
+  {
+    slug: "dsc",
+    title: "Digital Signature Certificate (DSC)",
+    badge: "Electronic Authentication",
+    heroTitleGold: "Digital Signature",
+    heroTitleWhite: "Certificate (DSC)",
+    heroSubtitle: "Secure Electronic Authentication & Signing of Online Documents",
+    description:
+      "A Digital Signature Certificate (DSC) is used for secure electronic authentication and signing of online documents and statutory forms. DSCs are issued by Certifying Authorities licensed by the Controller of Certifying Authorities (CCA).",
+    longDescription:
+      "A Digital Signature Certificate (DSC) is used for secure electronic authentication and signing of online documents and statutory forms. We assist with Class 3 Individual, Organization, and Foreign Individual DSC issuance, renewals, and USB token setup.",
+    iconName: "ShieldCheck",
+    keyHighlights: [
+      "CCA Licensed Certifying Authorities",
+      "Class 3 Digital Signatures",
+      "Token Setup & Driver Support",
+      "Fast 24-48 Hr Issuance",
+    ],
+    services: [
+      {
+        iconName: "FileCheck",
+        name: "Individual DSC",
+        description:
+          "Class 3 Digital Signature Certificate for individuals required for signing MCA, Income Tax, GST, and e-Tendering statutory forms.",
+      },
+      {
+        iconName: "Building2",
+        name: "Organization DSC",
+        description:
+          "Class 3 Digital Signature Certificate for authorized signatories of corporate entities, LLPs, and partnership firms.",
+      },
+      {
+        iconName: "Globe",
+        name: "Foreign Individual DSC",
+        description:
+          "Digital Signature Certificate issuance for foreign directors, non-resident shareholders, and foreign corporate representatives.",
+      },
+      {
+        iconName: "ShieldCheck",
+        name: "DSC Renewal",
+        description:
+          "Hassle-free renewal of existing Class 3 DSC tokens before expiry to maintain uninterrupted access to MCA and GST portals.",
+      },
+      {
+        iconName: "ClipboardCheck",
+        name: "DSC Installation & Support",
+        description:
+          "Complete driver installation, USB token setup, browser configuration, and technical support for e-signing documents.",
+      },
+    ],
+    whyPoints: [
+      {
+        title: "Fast Processing",
+        desc: "Quick verification and issuance of Class 3 DSC tokens within 24–48 hours.",
+      },
+      {
+        title: "CCA Licensed Partner",
+        desc: "Direct coordination with top licensed Certifying Authorities (CAs) in India.",
+      },
+      {
+        title: "Complete Technical Support",
+        desc: "Full technical assistance with USB token setup, PIN configuration, and browser signing settings.",
+      },
+      {
+        title: "Global Reach",
+        desc: "Remote eKYC verification available for Indian citizens, NRIs, and foreign nationals.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Consultation & Selection",
+        description: "Select the appropriate Class 3 DSC type — Individual, Organization, or Foreign national.",
+        iconName: "PhoneCall",
+      },
+      {
+        step: "02",
+        title: "Documentation & eKYC",
+        description: "Submit PAN/Aadhaar/Passport details and complete quick video/eKYC verification.",
+        iconName: "FileText",
+      },
+      {
+        step: "03",
+        title: "Issuance & Encoding",
+        description: "Certificate is issued by the licensed CA and securely loaded onto a USB cryptographic token.",
+        iconName: "Upload",
+      },
+      {
+        step: "04",
+        title: "Delivery & Token Setup",
+        description: "Receive your USB token with full driver installation and e-signature technical support.",
+        iconName: "CheckCircle2",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a Digital Signature Certificate (DSC)?",
+        answer:
+          "A Digital Signature Certificate (DSC) is a secure digital key issued by licensed Certifying Authorities (CAs) to validate and certify the identity of the person holding the certificate for electronic document signing.",
+      },
+      {
+        question: "What types of DSC do you provide?",
+        answer:
+          "We provide Class 3 Individual DSCs, Organization DSCs for company signatories, Foreign Individual DSCs for foreign directors, and full DSC Renewal services.",
+      },
+      {
+        question: "How long is a DSC valid?",
+        answer:
+          "Class 3 DSCs are typically issued with a validity of 1, 2, or 3 years and can be renewed before expiration.",
+      },
+      {
+        question: "Do I need a USB token for signing MCA and GST forms?",
+        answer:
+          "Yes, statutory portals like MCA, GST, Income Tax, and e-Tendering require a physical USB cryptographic token containing your Class 3 DSC.",
+      },
+    ],
+    metadata: {
+      title: "Digital Signature Certificate (DSC) | Nithya Gokul Associates",
+      description:
+        "Class 3 Individual DSC, Organization DSC, Foreign Individual DSC, DSC renewal, and token installation support by Nithya Gokul Associates.",
+      ogTitle: "Digital Signature Certificate (DSC) Services | Nithya Gokul Associates",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────
+  // CATEGORY 10: Legal Entity Identifier (LEI)
+  // ─────────────────────────────────────────────────────────
+  {
+    slug: "lei",
+    title: "Legal Entity Identifier (LEI)",
+    badge: "Global Identifier",
+    heroTitleGold: "Legal Entity",
+    heroTitleWhite: "Identifier (LEI)",
+    heroSubtitle: "Globally Recognised Financial Entity Identification & Renewal",
+    description:
+      "A Legal Entity Identifier (LEI) is a globally recognised identifier used to uniquely identify legal entities participating in financial transactions. LEI records are maintained through authorised LEI service providers and need to be kept current through renewal.",
+    longDescription:
+      "A Legal Entity Identifier (LEI) is a globally recognised 20-character code required for entities participating in financial transactions. We assist with new registrations, annual renewals, updating entity details, status tracking, and documentation.",
+    iconName: "Globe",
+    keyHighlights: [
+      "Globally Recognised Financial Code",
+      "RBI & SEBI Mandated Compliance",
+      "Authorised LOU Portal Registration",
+      "Annual Renewal & Status Management",
+    ],
+    services: [
+      {
+        iconName: "Globe",
+        name: "New LEI Registration",
+        description:
+          "Assistance with new 20-character LEI code application for corporate entities, trusts, and financial market participants.",
+      },
+      {
+        iconName: "CalendarCheck",
+        name: "LEI Renewal",
+        description:
+          "Timely annual renewal management to maintain active status and prevent LEI records from lapsing.",
+      },
+      {
+        iconName: "FileCheck",
+        name: "Updating Entity Details",
+        description:
+          "Modifying legal entity name, registered office address, parent entity structure, and corporate data in the global LEI database.",
+      },
+      {
+        iconName: "BarChart3",
+        name: "Status Tracking & Assistance",
+        description:
+          "Real-time tracking of LEI validation status, LOU query resolution, and verification assistance.",
+      },
+      {
+        iconName: "FileText",
+        name: "LEI Documentation Support",
+        description:
+          "Complete documentation coordination including Board Resolutions, audited financial statements, and organizational charts.",
+      },
+    ],
+    whyPoints: [
+      {
+        title: "Regulatory Compliance",
+        desc: "Ensure compliance with RBI guidelines for credit exposure above ₹5 Crore and large-value financial transactions.",
+      },
+      {
+        title: "Global Acceptance",
+        desc: "Standardised entity identification recognised by international banks, trade systems, and capital markets.",
+      },
+      {
+        title: "Proactive Renewals",
+        desc: "Continuous tracking to ensure your LEI status remains 'ISSUED' without slipping into lapsed status.",
+      },
+      {
+        title: "Expert Assistance",
+        desc: "End-to-end documentation coordination and LOU liaison handled by seasoned corporate advisory professionals.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Entity Assessment",
+        description: "Review company corporate structure, financial transactions, and eligibility for LEI issuance.",
+        iconName: "PhoneCall",
+      },
+      {
+        step: "02",
+        title: "Document Compilation",
+        description: "Collate Certificate of Incorporation, MOA/AOA, Board Resolution, and audited statements.",
+        iconName: "FileText",
+      },
+      {
+        step: "03",
+        title: "LOU Portal Submission",
+        description: "Submit digital application on the authorised LEI portal with complete validation metrics.",
+        iconName: "Upload",
+      },
+      {
+        step: "04",
+        title: "LEI Allocation & Activation",
+        description: "Receive your official 20-character LEI code for banking, trade, and regulatory filings.",
+        iconName: "CheckCircle2",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a Legal Entity Identifier (LEI)?",
+        answer:
+          "An LEI is a 20-digit unique alphanumeric code assigned to legal entities engaging in financial transactions to improve global transparency and financial risk management.",
+      },
+      {
+        question: "Is LEI mandatory in India?",
+        answer:
+          "Yes, RBI mandates LEI for entities with aggregate credit exposure above ₹5 Crore, non-derivative financial transactions, and large cross-border remittances.",
+      },
+      {
+        question: "What LEI services does Nithya Gokul Associates provide?",
+        answer:
+          "We offer new LEI registration, annual LEI renewal, updating entity details, status tracking, and complete documentation assistance.",
+      },
+      {
+        question: "How long is an LEI valid?",
+        answer:
+          "An LEI code is valid for 1 year from issuance or renewal date and must be renewed annually to maintain active status.",
+      },
+    ],
+    metadata: {
+      title: "Legal Entity Identifier (LEI) Registration & Renewal | NGA",
+      description:
+        "New LEI registration, annual LEI renewal, entity detail updates, and LEI documentation support by Nithya Gokul Associates.",
+      ogTitle: "Legal Entity Identifier (LEI) Services | Nithya Gokul Associates",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────
+  // CATEGORY 11: ICEGATE Services
+  // ─────────────────────────────────────────────────────────
+  {
+    slug: "icegate",
+    title: "ICEGATE Registration & Services",
+    badge: "Customs Gateway",
+    heroTitleGold: "ICEGATE",
+    heroTitleWhite: "Registration & Services",
+    heroSubtitle: "Indian Customs Electronic Gateway Registration, DSC & Profile Support",
+    description:
+      "ICEGATE is the Indian Customs electronic portal used by importers, exporters, customs brokers and stakeholders for customs-related electronic services and filings. The portal provides registration facilities and supports functions such as DSC registration, IEC-GSTIN mapping and other customs-related services.",
+    longDescription:
+      "ICEGATE is the Indian Customs electronic portal used by importers, exporters, and customs brokers for customs-related filings and e-services. We provide ICEGATE registration, Class 3 DSC registration/updates, IEC-GSTIN mapping, and profile management.",
+    iconName: "Ship",
+    keyHighlights: [
+      "CBIC Customs Electronic Gateway",
+      "ICEGATE Portal Registration",
+      "Class 3 DSC Registration & Update",
+      "IEC - GSTIN Mapping Assistance",
+    ],
+    services: [
+      {
+        iconName: "Ship",
+        name: "ICEGATE Registration",
+        description:
+          "Complete user account setup and registration on the ICEGATE portal for importers, exporters, and customs brokers.",
+      },
+      {
+        iconName: "ShieldCheck",
+        name: "DSC Registration / Update on ICEGATE",
+        description:
+          "Registration and re-mapping of Class 3 Digital Signature Certificates on ICEGATE for digital signing of customs documents.",
+      },
+      {
+        iconName: "Globe",
+        name: "IEC - GSTIN Mapping",
+        description:
+          "Linkage of Import Export Code (IEC) with GSTIN and Customs EDI system for seamless export-import clearance.",
+      },
+      {
+        iconName: "UserCheck",
+        name: "Profile Updates & Registration Support",
+        description:
+          "Modifications to registered email, mobile, authorized signatory, and business details on the ICEGATE portal.",
+      },
+    ],
+    whyPoints: [
+      {
+        title: "Customs Clearance Confidence",
+        desc: "Ensure seamless e-filing of Shipping Bills and Bills of Entry without customs port holds or portal errors.",
+      },
+      {
+        title: "Expert Portal Navigation",
+        desc: "Hands-on support from corporate advisors experienced in customs e-filing and registration guidelines.",
+      },
+      {
+        title: "Fast Turnaround",
+        desc: "Quick turnaround for registration approval, DSC re-mapping, and portal query resolution.",
+      },
+      {
+        title: "Integrated Exim Support",
+        desc: "Seamless alignment between IEC, GSTIN, DSC, and Bank AD Code registrations.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Requirement Audit",
+        description: "Verify active IEC, GSTIN, PAN, and valid Class 3 DSC credentials.",
+        iconName: "PhoneCall",
+      },
+      {
+        step: "02",
+        title: "ICEGATE Portal Filing",
+        description: "Submit online registration application on the CBIC ICEGATE portal with complete entity data.",
+        iconName: "FileText",
+      },
+      {
+        step: "03",
+        title: "DSC & Profile Linkage",
+        description: "Configure signing drivers and link Class 3 Digital Signature Certificate to the ICEGATE profile.",
+        iconName: "Upload",
+      },
+      {
+        step: "04",
+        title: "Approval & Activation",
+        description: "Complete OTP / customs approval verification for full operational access.",
+        iconName: "CheckCircle2",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is ICEGATE?",
+        answer:
+          "ICEGATE (Indian Customs Electronic Gateway) is the official portal used by importers, exporters, and customs brokers for e-filing customs declarations, Bills of Entry, Shipping Bills, and duty payments.",
+      },
+      {
+        question: "Why is DSC registration required on ICEGATE?",
+        answer:
+          "A Class 3 DSC is mandatory on ICEGATE to authenticate and digitally sign e-filings and customs declarations submitted to Indian Customs.",
+      },
+      {
+        question: "What services does Nithya Gokul Associates offer for ICEGATE?",
+        answer:
+          "We provide ICEGATE Registration, DSC registration/update on ICEGATE, IEC-GSTIN mapping, profile updates, and related customs portal registration assistance.",
+      },
+      {
+        question: "What is IEC-GSTIN mapping?",
+        answer:
+          "IEC-GSTIN mapping links your Import Export Code with your GST identification number in the Customs EDI system to enable tax credit claims and export benefits.",
+      },
+    ],
+    metadata: {
+      title: "ICEGATE Registration & Services | Indian Customs Portal | NGA",
+      description:
+        "ICEGATE registration, Class 3 DSC registration/update on ICEGATE, profile updates, and IEC-GSTIN mapping assistance by Nithya Gokul Associates.",
+      ogTitle: "ICEGATE Registration & Services | Nithya Gokul Associates",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────
+  // CATEGORY 12: APEDA Registration
+  // ─────────────────────────────────────────────────────────
+  {
+    slug: "apeda",
+    title: "APEDA Registration",
+    badge: "Export Development",
+    heroTitleGold: "APEDA Registration",
+    heroTitleWhite: "& e-RCMC Services",
+    heroSubtitle: "Export Registration for Agricultural & Processed Food Products",
+    description:
+      "APEDA Registration / RCMC is applicable to exporters dealing in APEDA-scheduled agricultural and processed food products. Exporters can apply for APEDA e-RCMC through the DGFT portal after obtaining an IEC.",
+    longDescription:
+      "APEDA registration / e-RCMC is applicable to exporters dealing in scheduled agricultural and processed food products. We handle APEDA e-RCMC applications, new registrations, document verification, renewal/update support, and status tracking.",
+    iconName: "Leaf",
+    keyHighlights: [
+      "Ministry of Commerce & DGFT Portal",
+      "APEDA e-RCMC Issuance",
+      "Scheduled Agri & Food Products",
+      "Export Subsidies & Benefits Access",
+    ],
+    services: [
+      {
+        iconName: "Leaf",
+        name: "APEDA e-RCMC Application",
+        description:
+          "Filing and processing of digital Registration-cum-Membership Certificate (e-RCMC) applications on the DGFT portal.",
+      },
+      {
+        iconName: "Building2",
+        name: "New APEDA Registration",
+        description:
+          "End-to-end guidance for new agricultural and processed food exporters entering international markets.",
+      },
+      {
+        iconName: "FileCheck",
+        name: "Document Verification",
+        description:
+          "Thorough audit of IEC, bank certificates, partnership/incorporation documents, and food safety licenses prior to submission.",
+      },
+      {
+        iconName: "CalendarCheck",
+        name: "Renewal & Update Support",
+        description:
+          "Assistance with annual e-RCMC renewals, amendments in business premises, product schedules, or management details.",
+      },
+      {
+        iconName: "BarChart3",
+        name: "Status Tracking & Application Assistance",
+        description:
+          "Real-time tracking of DGFT / APEDA application progress and quick response to departmental queries.",
+      },
+    ],
+    whyPoints: [
+      {
+        title: "Mandatory Export Compliance",
+        desc: "Essential certificate to legally export scheduled agricultural & processed food items from India.",
+      },
+      {
+        title: "Government Incentives Access",
+        desc: "Unlocks financial assistance, trade fair participation, and export promotion schemes from APEDA.",
+      },
+      {
+        title: "DGFT Portal Expertise",
+        desc: "Seamless navigation of DGFT online registration standards and document requirements.",
+      },
+      {
+        title: "End-to-End Agri-Exim Support",
+        desc: "Comprehensive advisory combining IEC, FSSAI food licensing, ISO 22000, and APEDA registration.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "IEC & Product Check",
+        description: "Verify active Import Export Code (IEC) and classify products under APEDA scheduled lists.",
+        iconName: "PhoneCall",
+      },
+      {
+        step: "02",
+        title: "Documentation",
+        description: "Collect bank certificates, incorporation details, PAN, and premises documents.",
+        iconName: "FileText",
+      },
+      {
+        step: "03",
+        title: "DGFT Online Filing",
+        description: "Submit e-RCMC application on DGFT portal under APEDA jurisdiction.",
+        iconName: "Upload",
+      },
+      {
+        step: "04",
+        title: "e-RCMC Grant",
+        description: "Receive digital APEDA e-RCMC certificate for international export operations.",
+        iconName: "CheckCircle2",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is APEDA Registration / e-RCMC?",
+        answer:
+          "APEDA e-RCMC (Registration-cum-Membership Certificate) is a mandatory export registration for businesses exporting scheduled agricultural and processed food products from India.",
+      },
+      {
+        question: "Who needs APEDA Registration?",
+        answer:
+          "Exporters dealing in fruits, vegetables, meat, poultry, dairy products, confectionery, honey, jaggery, cocoa, cereals, and other APEDA-scheduled items.",
+      },
+      {
+        question: "What services does Nithya Gokul Associates provide for APEDA?",
+        answer:
+          "We offer APEDA e-RCMC application, new registration, document verification, application assistance, renewal/update support, and real-time status tracking.",
+      },
+      {
+        question: "Do I need an IEC before applying for APEDA?",
+        answer:
+          "Yes, a valid Import Export Code (IEC) issued by DGFT is a mandatory prerequisite for obtaining APEDA e-RCMC.",
+      },
+    ],
+    metadata: {
+      title: "APEDA Registration & e-RCMC Services | Nithya Gokul Associates",
+      description:
+        "APEDA e-RCMC application, new registration, document verification, renewal support, and status tracking by Nithya Gokul Associates.",
+      ogTitle: "APEDA Registration & e-RCMC Services | Nithya Gokul Associates",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────
+  // CATEGORY 13: ISO Certification
+  // ─────────────────────────────────────────────────────────
+  {
+    slug: "iso",
+    title: "ISO Certification",
+    badge: "Quality & Management Standards",
+    heroTitleGold: "ISO Certification",
+    heroTitleWhite: "Assistance & Support",
+    heroSubtitle: "Recognised Standards for Quality, Environment, Security & Safety",
+    description:
+      "ISO standards help organisations establish recognised systems for quality, environment, information security, food safety, occupational health and other management areas. ISO itself does not issue certificates; certification is carried out by certification bodies. BIS also operates management systems certification schemes in India.",
+    longDescription:
+      "ISO standards help organisations establish recognised systems for quality, environment, information security, and food safety. We provide assistance for ISO certification, documentation coordination, application support, renewal support, and certification body liaison.",
+    iconName: "ClipboardCheck",
+    keyHighlights: [
+      "Recognised Management Standards",
+      "IAF Accredited Certification Bodies",
+      "BIS Scheme Coordination",
+      "Documentation & Audit Readiness",
+    ],
+    services: [
+      {
+        iconName: "ShieldCheck",
+        name: "Assistance for ISO Certification",
+        description:
+          "Expert guidance on identifying and selecting the right ISO standards (ISO 9001, 14001, 27001, 22000, 45001) for your industry.",
+      },
+      {
+        iconName: "FileText",
+        name: "Documentation Coordination",
+        description:
+          "Structuring Quality Manuals, Standard Operating Procedures (SOPs), policy frameworks, risk registers, and mandatory audit records.",
+      },
+      {
+        iconName: "Upload",
+        name: "Application Support",
+        description:
+          "Formal application filing and coordination with accredited IAF-recognized Certification Bodies or BIS schemes.",
+      },
+      {
+        iconName: "CalendarCheck",
+        name: "Renewal & Surveillance Support",
+        description:
+          "Assistance with annual surveillance audits and 3-year recertification renewals to maintain continuous valid certification.",
+      },
+      {
+        iconName: "Handshake",
+        name: "Coordination with Certification Bodies",
+        description:
+          "Pre-audit readiness reviews, internal audit coordination, and seamless liaison with external certification auditors.",
+      },
+    ],
+    whyPoints: [
+      {
+        title: "Global Credibility",
+        desc: "Build strong customer trust and qualify for corporate tenders requiring ISO-certified systems.",
+      },
+      {
+        title: "Accredited Partners",
+        desc: "We coordinate strictly with IAF-accredited, genuine certification bodies and BIS schemes.",
+      },
+      {
+        title: "Process Improvement",
+        desc: "Implement structured workflows, risk controls, and quality policies that enhance operational performance.",
+      },
+      {
+        title: "End-to-End Coordination",
+        desc: "Complete assistance from initial gap assessment to document preparation and final audit defense.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Gap Analysis",
+        description: "Assess existing business processes against target ISO standard requirements.",
+        iconName: "PhoneCall",
+      },
+      {
+        step: "02",
+        title: "Documentation & Setup",
+        description: "Draft SOPs, Quality Policy, Risk Assessments, and internal operational controls.",
+        iconName: "FileText",
+      },
+      {
+        step: "03",
+        title: "Internal Audit",
+        description: "Conduct pre-assessment internal audit to ensure full audit readiness.",
+        iconName: "ClipboardCheck",
+      },
+      {
+        step: "04",
+        title: "External Audit & Grant",
+        description: "Liaise with accredited certification body for final audit and certificate issuance.",
+        iconName: "CheckCircle2",
+      },
+    ],
+    faqs: [
+      {
+        question: "Does ISO issue certificates directly?",
+        answer:
+          "No, ISO develops international standards but does not issue certificates. Certification is conducted by independent accredited certification bodies and BIS in India.",
+      },
+      {
+        question: "What ISO certification assistance does Nithya Gokul Associates provide?",
+        answer:
+          "We provide assistance for ISO certification, documentation coordination, application support, renewal support, and coordination with appropriate certification bodies.",
+      },
+      {
+        question: "Which ISO standards are most common?",
+        answer:
+          "Common standards include ISO 9001 (Quality), ISO 27001 (Information Security), ISO 14001 (Environment), ISO 22000 (Food Safety), and ISO 45001 (Occupational Health & Safety).",
+      },
+      {
+        question: "How long is an ISO certificate valid?",
+        answer:
+          "An ISO certificate is valid for 3 years, with mandatory annual surveillance audits conducted in Years 1 and 2.",
+      },
+    ],
+    metadata: {
+      title: "ISO Certification Assistance & Advisory Services | NGA",
+      description:
+        "Assistance for ISO certification, documentation coordination, application support, renewal support, and certification body liaison by NGA.",
+      ogTitle: "ISO Certification Assistance | Nithya Gokul Associates",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────
+  // CATEGORY 14: ESOP & Share-Based Schemes
+  // ─────────────────────────────────────────────────────────
+  {
+    slug: "esop",
+    title: "ESOP & Share-Based Benefit Schemes",
+    badge: "Equity Incentives",
+    heroTitleGold: "ESOP & Share-Based",
+    heroTitleWhite: "Benefit Schemes",
+    heroSubtitle: "End-to-End Equity Incentive & Employee Ownership Advisory",
+    description:
+      "An Employee Stock Ownership Plan (ESOP) or share-based benefit scheme is a reward program where a company gives workers the right or option to buy company shares in the future at a set, often discounted price. It helps companies build team loyalty and lets staff share in the business's financial success.",
+    longDescription:
+      "An Employee Stock Ownership Plan (ESOP) or share-based benefit scheme is a reward program giving workers stock options to build team loyalty and share in financial success. Nithya Gokul Associates provides end-to-end support for ESOP design, legal drafting, ROC filings, and option management across startups and enterprises.",
+    iconName: "TrendingUp",
+    keyHighlights: [
+      "Companies Act & SEBI Compliant",
+      "End-to-End Scheme Structuring",
+      "Grant, Vesting & Exercise Administration",
+      "Indian & Foreign Subsidiaries Support",
+    ],
+    services: [
+      {
+        iconName: "TrendingUp",
+        name: "ESOP Policy Design & Structuring",
+        description:
+          "Designing custom ESOP, RSU, SAR, and Share-Based schemes aligned with business valuation, vesting schedules, and growth goals.",
+      },
+      {
+        iconName: "FileCheck",
+        name: "Secretarial & Regulatory Filings",
+        description:
+          "Drafting Board & Shareholder Resolutions, EGM Explanatory Statements, ESOP Trust Deeds, and filing Form MGT-14 / PAS-3 with ROC.",
+      },
+      {
+        iconName: "BarChart3",
+        name: "Valuation & Cap Table Management",
+        description:
+          "Coordination for Registered Valuer reports, exercise price determination, and equity dilution modeling.",
+      },
+      {
+        iconName: "Users",
+        name: "Grant, Vesting & Exercise Admin",
+        description:
+          "Issuing official Grant Letters, tracking option vesting schedules, managing exercise applications, and share allotments.",
+      },
+      {
+        iconName: "Globe",
+        name: "Foreign & Subsidiary ESOP Structuring",
+        description:
+          "Specialized equity incentive advisory for foreign parent entities issuing stock options to Indian subsidiary employees under FEMA / RBI guidelines.",
+      },
+    ],
+    whyPoints: [
+      {
+        title: "For Workers: Wealth Growth & Pride",
+        desc: "Extra money growth, cheap stock options, and true pride in building the business alongside founders.",
+      },
+      {
+        title: "For Companies: Retention & Cash Savings",
+        desc: "Better staff retention, higher work output, and a proven strategy to save cash on compensation packages.",
+      },
+      {
+        title: "End-to-End Legal & ROC Support",
+        desc: "Complete handling of Special Resolutions, ROC filings (MGT-14, PAS-3), and Form SH-6 statutory registers.",
+      },
+      {
+        title: "Trusted Secretarial Partner",
+        desc: "Leading secretarial advisory firm serving Indian & foreign subsidiaries, high-growth startups, and large enterprises.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Scheme Architecture",
+        description: "Determine pool size, eligibility, grant frequency, exercise price, and vesting schedule.",
+        iconName: "PhoneCall",
+      },
+      {
+        step: "02",
+        title: "Drafting & Governance",
+        description: "Draft ESOP Scheme Document, Board Resolutions, EGM Notices, and Trust Deeds.",
+        iconName: "FileText",
+      },
+      {
+        step: "03",
+        title: "Shareholder & ROC Filings",
+        description: "Pass Special Resolution, file Form MGT-14 with ROC, and update company cap table.",
+        iconName: "Upload",
+      },
+      {
+        step: "04",
+        title: "Grant Letters & Register Admin",
+        description: "Issue Grant Letters to employees, maintain Form SH-6 ESOP register, and manage option exercise.",
+        iconName: "CheckCircle2",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is an ESOP / Share-Based Benefit Scheme?",
+        answer:
+          "An Employee Stock Ownership Plan (ESOP) or share-based benefit scheme is a reward program where a company gives workers the right or option to buy company shares in the future at a set, often discounted price. It helps companies build team loyalty and lets staff share in the business's financial success.",
+      },
+      {
+        question: "What are the main benefits of ESOPs?",
+        answer:
+          "For Workers: Extra money growth, cheap stock options, and true pride in building the business. For Companies: Better staff retention, higher work output, and a way to save cash on pay.",
+      },
+      {
+        question: "What ESOP services does Nithya Gokul Associates provide?",
+        answer:
+          "We provide end-to-end support for ESOPs and Share-Based Benefit Schemes across all business stages—including scheme design, legal drafting, shareholder approvals, ROC filings (MGT-14, PAS-3), valuation coordination, and grant/exercise administration.",
+      },
+      {
+        question: "Who does Nithya Gokul Associates serve for ESOP advisory?",
+        answer:
+          "We proudly serve Indian & foreign subsidiary companies, high-growth startups, and large enterprises. Partner with us to seamlessly design, implement, and manage your equity incentive plans.",
+      },
+    ],
+    metadata: {
+      title: "ESOP & Share-Based Benefit Schemes Advisory | NGA",
+      description:
+        "End-to-end ESOP scheme design, secretarial compliance, valuation coordination, and grant administration for startups and enterprises by Nithya Gokul Associates.",
+      ogTitle: "ESOP & Share-Based Benefit Schemes | Nithya Gokul Associates",
+    },
+  },
 ];
 
 export const getCategoryBySlug = (slug: string): CategoryData | undefined =>
   categoriesData.find((c) => c.slug === slug);
+

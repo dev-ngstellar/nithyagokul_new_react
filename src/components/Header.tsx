@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu, X, Phone, ChevronDown, FileText,
   Building2, FileCheck, BriefcaseBusiness, ShieldCheck, Scale, ArrowRight,
-  Utensils, Globe, Handshake, BarChart3
+  Utensils, Globe, Handshake, BarChart3, Ship, Leaf, ClipboardCheck, TrendingUp
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────
@@ -18,50 +18,72 @@ const megaMenuCategories = [
   {
     icon: Building2,
     title: "Company Incorporation",
-    description: "Start your business with complete incorporation and registration support.",
     href: "/services/company-incorporation"
   },
   {
     icon: FileCheck,
     title: "Corporate Compliance",
-    description: "Corporate governance, ROC compliance and statutory services.",
     href: "/services/corporate-compliance"
   },
   {
     icon: BriefcaseBusiness,
     title: "Corporate Advisory",
-    description: "Legal documentation and strategic business advisory.",
     href: "/services/corporate-advisory"
   },
   {
     icon: ShieldCheck,
     title: "Trademark & Governance",
-    description: "Protect your business and ensure responsible governance.",
     href: "/services/trademark-governance"
   },
   {
     icon: Handshake,
     title: "Business Sale & Investment",
-    description: "Helping entrepreneurs buy, sell, invest and grow businesses with confidence.",
     href: "/services/business-sale-investment"
   },
   {
     icon: Globe,
     title: "FEMA & Foreign Investment",
-    description: "Cross-border investment advisory and FEMA compliance services.",
     href: "/services/fema-foreign-investment"
   },
   {
     icon: BarChart3,
     title: "Listed Company Services",
-    description: "SEBI compliance, stock exchange filings and listed company advisory.",
     href: "/services/listed-company-services"
   },
   {
     icon: Scale,
     title: "Litigation & Business Exit",
-    description: "Legal proceedings, restructuring and business closure support.",
     href: "/services/litigation-business-exit"
+  },
+  {
+    icon: ShieldCheck,
+    title: "Digital Signature Certificate (DSC)",
+    href: "/services/dsc"
+  },
+  {
+    icon: Globe,
+    title: "Legal Entity Identifier (LEI)",
+    href: "/services/lei"
+  },
+  {
+    icon: Ship,
+    title: "ICEGATE Registration",
+    href: "/services/icegate"
+  },
+  {
+    icon: Leaf,
+    title: "APEDA Registration",
+    href: "/services/apeda"
+  },
+  {
+    icon: ClipboardCheck,
+    title: "ISO Certification",
+    href: "/services/iso"
+  },
+  {
+    icon: TrendingUp,
+    title: "ESOP & Share-Based Schemes",
+    href: "/services/esop"
   },
 ];
 
@@ -112,8 +134,8 @@ export default function Header() {
     },
   ];
 
-  const isServicesActive = megaMenuCategories.some((cat) => pathname === cat.href);
-  const isRegistrationsActive = registrationItems.some((item) => pathname === item.href);
+  const isServicesActive = megaMenuCategories.some((cat) => pathname === cat.href || pathname.replace(/\/$/, "") === cat.href);
+  const isRegistrationsActive = registrationItems.some((item) => pathname === item.href || pathname.replace(/\/$/, "") === item.href);
 
   const otherLinks = [
     { name: "Home", href: "/" },
@@ -199,29 +221,30 @@ export default function Header() {
                     className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max max-w-[860px]"
                   >
                     <div className="bg-[#071B38] border border-white/10 rounded-[18px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
-                      {/* ── 4×2 Category Grid ── */}
-                      <div className="grid grid-cols-4 gap-2 p-5 pb-3">
+                      {/* ── 2-Column Grid (No Subtitles) ── */}
+                      <div className="grid grid-cols-2 gap-x-6 gap-y-1 p-5 pb-3">
                         {megaMenuCategories.map((cat) => {
                           const Icon = cat.icon;
-                          const isActive = pathname === cat.href;
+                          const isActive = pathname === cat.href || pathname.replace(/\/$/, "") === cat.href;
                           return (
                             <Link
                               href={cat.href}
                               key={cat.title}
                               onClick={() => setActiveDropdown(null)}
-                              className="group px-4 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/[0.04] hover:shadow-[0_4px_20px_-4px_rgba(197,155,80,0.15)] cursor-pointer block"
+                              className={`group flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${
+                                isActive
+                                  ? "bg-white/[0.08] text-gold border border-gold/30 shadow-[0_2px_12px_rgba(212,175,55,0.15)]"
+                                  : "border border-transparent hover:bg-white/[0.06] hover:shadow-[0_4px_20px_-4px_rgba(197,155,80,0.15)]"
+                              }`}
                             >
-                              <div className="flex items-center gap-2 mb-2">
-                                <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center shrink-0 group-hover:bg-gold/20 transition-colors">
-                                  <Icon className="w-4 h-4 text-gold" />
-                                </div>
-                                <h3 className={`text-[12px] font-bold leading-tight group-hover:text-gold transition-colors ${isActive ? "text-gold" : "text-white"}`}>
-                                  {cat.title}
-                                </h3>
+                              <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                                isActive ? "bg-gold text-navy" : "bg-gold/10 group-hover:bg-gold/20 text-gold"
+                              }`}>
+                                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-navy" : "text-gold"}`} />
                               </div>
-                              <p className="text-[10.5px] text-slate-400 leading-[1.6]">
-                                {cat.description}
-                              </p>
+                              <h3 className={`text-[12.5px] leading-tight transition-colors ${isActive ? "text-gold font-bold" : "text-white group-hover:text-gold font-semibold"}`}>
+                                {cat.title}
+                              </h3>
                             </Link>
                           );
                         })}
@@ -425,7 +448,7 @@ export default function Header() {
                         <div className="p-3 space-y-1">
                           {megaMenuCategories.map((cat) => {
                             const Icon = cat.icon;
-                            const isActive = pathname === cat.href;
+                            const isActive = pathname === cat.href || pathname.replace(/\/$/, "") === cat.href;
                             return (
                               <Link
                                 key={cat.title}
