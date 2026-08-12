@@ -24,7 +24,7 @@ export default function InteractiveHero() {
       title: "Company Registration",
       desc: "Establish your corporate entity with complete regulatory compliance and premium legal structural frameworks.",
       href: "/registrations/private-limited-registration",
-      bgImage: "/hero-banner/company-reg.jpeg",
+      bgImage: "/hero-banner/company-reg.webp",
     },
     {
       id: "panel-2",
@@ -32,7 +32,7 @@ export default function InteractiveHero() {
       title: "Secretarial Consulting",
       desc: "Advising board administration, corporate compliance audits, and legal counsel overseen by CS practitioners.",
       href: "/services/secretarial-consulting",
-      bgImage: "/hero-banner/sec-advisory.jpeg",
+      bgImage: "/hero-banner/sec-advisory.webp",
     },
     {
       id: "panel-3",
@@ -40,7 +40,7 @@ export default function InteractiveHero() {
       title: "Trademark & IP Registry",
       desc: "Protect your brand identity, secure name marks, register design patents, and enforce copyright defenses.",
       href: "/trademark",
-      bgImage: "/hero-banner/trademar_and_ip_registry.jpeg",
+      bgImage: "/hero-banner/trademar_and_ip_registry.webp",
     },
     {
       id: "panel-4",
@@ -48,7 +48,7 @@ export default function InteractiveHero() {
       title: "Business Valuation & Insolvency",
       desc: "Certified IBBI business, share, and asset valuations alongside statutory insolvency and debt restructurings.",
       href: "/services/business-valuation-insolvency",
-      bgImage: "/hero-banner/business_valuation.jpg",
+      bgImage: "/hero-banner/business_valuation.webp",
     },
   ];
 

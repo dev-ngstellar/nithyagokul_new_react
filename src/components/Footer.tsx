@@ -62,7 +62,7 @@ export default function Footer() {
           <StaggerItem className="space-y-4">
             <Link href="/" className="inline-block">
               <Image
-                src="/nga_logo.png"
+                src="/nga_logo.webp"
                 alt="Nithya Gokul Associates"
                 width={200}
                 height={100}

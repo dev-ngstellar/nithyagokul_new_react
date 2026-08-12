@@ -141,7 +141,7 @@ export default function ISOPage() {
           <SlideUp delay={0.2} className="relative h-full min-h-[400px] lg:min-h-full rounded-3xl overflow-hidden border border-slate-200 shadow-xl group">
             <div className="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
             <Image
-              src="/hero-banner/iso-certification.png"
+              src="/hero-banner/iso-certification.webp"
               alt="ISO Certification Consulting"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"

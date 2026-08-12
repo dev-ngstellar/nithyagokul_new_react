@@ -67,7 +67,7 @@ export default function TrademarkPage() {
           <SlideUp className="relative h-[500px] lg:h-[600px] rounded-[40px] overflow-hidden group">
             {/* Premium Abstract Art */}
             <img
-              src="/trademark-overview.png"
+              src="/trademark-overview.webp"
               alt="Trademark Protection"
               className="absolute inset-0 w-full h-full object-contain bg-slate-50 transition-transform duration-1000"
             />

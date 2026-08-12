@@ -72,14 +72,14 @@ export default function FSSAILicensePage() {
               <div className="inline-flex items-center gap-5 p-4 pr-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-gold/30 shadow-[0_0_30px_rgba(212,175,55,0.1)] relative animate-[float_5s_ease-in-out_infinite] group hover:border-gold/50 transition-colors duration-500">
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
                 <div className="w-20 h-20 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center shrink-0">
-                  <Image src="/FSSAI.png" alt="FSSAI Logo" width={64} height={64} className="object-contain" />
+                  <Image src="/FSSAI.webp" alt="FSSAI Logo" width={64} height={64} className="object-contain" />
                 </div>
                 <div>
                   <h4 className="font-serif text-xl font-bold text-white leading-tight mb-1">
-                    Food Safety & <br />Standards Authority of India
+                    FSSAI License Accreditation
                   </h4>
                   <p className="text-sm text-gold font-medium flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4" /> Verified Compliance Support
+                    <CheckCircle2 className="w-4 h-4" /> End-to-End Audit &amp; Certification
                   </p>
                 </div>
               </div>
@@ -88,12 +88,12 @@ export default function FSSAILicensePage() {
             {/* Trust Indicators */}
             <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
               {[
-                "New FSSAI Registration",
-                "License Renewal",
-                "State License Support",
-                "Central License Support",
-                "Documentation Assistance",
-                "Compliance Guidance"
+                "Basic Registration",
+                "State License",
+                "Central License",
+                "Annual Returns",
+                "Hygiene Ratings",
+                "Fast Turnaround"
               ].map((point, idx) => (
                 <StaggerItem key={idx}>
                   <div className="flex items-center gap-2.5">
@@ -114,8 +114,8 @@ export default function FSSAILicensePage() {
 
               {/* Form Top Section */}
               <div className="p-8 pb-2 text-center">
-                <div className="w-16 h-16 mx-auto bg-white rounded-full p-2 shadow-sm border border-slate-100 mb-4 flex items-center justify-center">
-                  <Image src="/FSSAI.png" alt="FSSAI Form Logo" width={48} height={48} className="object-contain" />
+                <div className="w-16 h-16 mx-auto bg-blue/10 rounded-full p-2 shadow-sm border border-slate-100 mb-4 flex items-center justify-center">
+                  <Image src="/FSSAI.webp" alt="FSSAI Form Logo" width={48} height={48} className="object-contain" />
                 </div>
                 <h3 className="font-serif text-[22px] font-bold text-navy mb-2">Apply For FSSAI License</h3>
                 <p className="text-sm text-slate-600">Quick registration support from experienced compliance professionals.</p>
@@ -166,7 +166,7 @@ export default function FSSAILicensePage() {
           <SlideUp delay={0.2} className="relative h-full min-h-[400px] lg:min-h-full rounded-3xl overflow-hidden border border-slate-200 shadow-xl group">
             <div className="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
             <Image
-              src="/hero-banner/company-reg.jpeg"
+              src="/hero-banner/company-reg.webp"
               alt="FSSAI Consulting"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
