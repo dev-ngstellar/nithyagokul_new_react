@@ -99,7 +99,7 @@ export default function JobApplicationForm({ jobTitle }: { jobTitle: string }) {
             name="phone"
             required
             className="w-full bg-white/50 border border-slate-200/60 rounded-lg px-3 py-2 outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all text-sm"
-            placeholder="+91 97109 09727"
+            placeholder="+91 99999 99999"
           />
         </div>
 
