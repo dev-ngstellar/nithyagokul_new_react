@@ -18,51 +18,61 @@ const megaMenuCategories = [
   {
     icon: Building2,
     title: "Company Incorporation",
+    description: "Register your Pvt Ltd, LLP, OPC, or any business entity seamlessly.",
     href: "/services/company-incorporation"
   },
   {
     icon: FileCheck,
     title: "Corporate Compliance",
+    description: "Annual filings, ROC returns & statutory compliance made easy.",
     href: "/services/corporate-compliance"
   },
   {
     icon: BriefcaseBusiness,
     title: "Corporate Advisory",
+    description: "Strategic advisory on restructuring, M&A & corporate governance.",
     href: "/services/corporate-advisory"
   },
   {
     icon: ShieldCheck,
     title: "Trademark & Governance",
+    description: "Protect your brand with trademark registration & governance support.",
     href: "/services/trademark-governance"
   },
   {
     icon: Handshake,
     title: "Business Sale & Investment",
+    description: "End-to-end support for business acquisitions, sales & investments.",
     href: "/services/business-sale-investment"
   },
   {
     icon: Globe,
     title: "FEMA & Foreign Investment",
+    description: "Navigate FEMA regulations for FDI, ODI & cross-border transactions.",
     href: "/services/fema-foreign-investment"
   },
   {
     icon: BarChart3,
     title: "Listed Company Services",
+    description: "SEBI compliance, LODR filings & listed company secretarial services.",
     href: "/services/listed-company-services"
   },
   {
     icon: Scale,
     title: "Litigation & Business Exit",
+    description: "NCLT matters, winding up, strike-off & business exit strategies.",
     href: "/services/litigation-business-exit"
   },
   {
     icon: ShieldCheck,
     title: "Digital Signature Certificate (DSC)",
+    description: "Class 3 DSC for MCA, GST, e-Tendering & Income Tax filings.",
     href: "/services/dsc"
   },
   {
     icon: TrendingUp,
     title: "ESOP & Share-Based Schemes",
+    description: "Design & implement ESOP, SWEAT equity & share-based incentive plans.",
     href: "/services/esop"
   },
 ];
@@ -222,11 +232,11 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 15 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max max-w-[860px]"
+                    className="fixed top-[var(--header-h)] left-1/2 -translate-x-1/2 mt-0 z-50 w-[95vw] max-w-[1240px]"
                   >
-                    <div className="bg-[#071B38] border border-white/10 rounded-[18px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
-                      {/* ── 2-Column Grid (No Subtitles) ── */}
-                      <div className="grid grid-cols-2 gap-x-6 gap-y-1 p-5 pb-3">
+                    <div className="bg-[#071B38] border border-white/10 rounded-2xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
+                      {/* ── 5-Column Grid (2 Rows × 5 Columns with Subtitles) ── */}
+                      <div className="grid grid-cols-5 gap-x-3 gap-y-2 p-4 pb-3">
                         {megaMenuCategories.map((cat) => {
                           const Icon = cat.icon;
                           const isActive = pathname === cat.href || pathname.replace(/\/$/, "") === cat.href;
@@ -235,47 +245,50 @@ export default function Header() {
                               href={cat.href}
                               key={cat.title}
                               onClick={() => setActiveDropdown(null)}
-                              className={`group flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${
-                                isActive
-                                  ? "bg-white/[0.08] text-gold border border-gold/30 shadow-[0_2px_12px_rgba(212,175,55,0.15)]"
-                                  : "border border-transparent hover:bg-white/[0.06] hover:shadow-[0_4px_20px_-4px_rgba(197,155,80,0.15)]"
-                              }`}
+                              className={`group flex items-start gap-2.5 px-3 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${isActive
+                                ? "bg-white/[0.08] text-gold border border-gold/30"
+                                : "border border-transparent hover:bg-white/[0.05]"
+                                }`}
                             >
-                              <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                                isActive ? "bg-gold text-navy" : "bg-gold/10 group-hover:bg-gold/20 text-gold"
-                              }`}>
+                              <div className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 transition-colors ${isActive ? "bg-gold text-navy" : "bg-gold/10 group-hover:bg-gold/20 text-gold"
+                                }`}>
                                 <Icon className={`w-3.5 h-3.5 ${isActive ? "text-navy" : "text-gold"}`} />
                               </div>
-                              <h3 className={`text-[12.5px] leading-tight transition-colors ${isActive ? "text-gold font-bold" : "text-white group-hover:text-gold font-semibold"}`}>
-                                {cat.title}
-                              </h3>
+                              <div className="min-w-0 flex-1">
+                                <h3 className={`text-[12px] leading-tight transition-colors ${isActive ? "text-gold font-bold" : "text-white group-hover:text-gold font-semibold"}`}>
+                                  {cat.title}
+                                </h3>
+                                <p className="text-[10px] leading-relaxed text-slate-400 mt-1">
+                                  {cat.description}
+                                </p>
+                              </div>
                             </Link>
                           );
                         })}
                       </div>
 
                       {/* ── Full-width Need Help CTA strip ── */}
-                      <div className="mx-5 mb-5 mt-1 border-t border-white/[0.06] pt-3">
+                      <div className="mx-3.5 mb-3 mt-0.5 border-t border-white/[0.06] pt-2">
                         <Link
                           href="/contact#consultation"
                           onClick={() => setActiveDropdown(null)}
-                          className="group flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-200 hover:bg-white/[0.03] hover:border-blue/30 cursor-pointer bg-gradient-to-r from-blue/10 via-blue/5 to-transparent border border-blue/10"
+                          className="group flex items-center justify-between px-3.5 py-2 rounded-xl transition-all duration-200 hover:bg-white/[0.03] hover:border-blue/30 cursor-pointer bg-gradient-to-r from-blue/10 via-blue/5 to-transparent border border-blue/10"
                         >
-                          <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-lg bg-blue/10 flex items-center justify-center shrink-0 group-hover:bg-blue/20 transition-colors">
-                              <Phone className="w-4 h-4 text-blue" />
+                          <div className="flex items-center gap-2">
+                            <div className="w-6 h-6 rounded-md bg-blue/10 flex items-center justify-center shrink-0 group-hover:bg-blue/20 transition-colors">
+                              <Phone className="w-3 h-3 text-blue" />
                             </div>
                             <div>
-                              <h3 className="text-[13px] font-bold text-white group-hover:text-blue transition-colors leading-tight">
+                              <h3 className="text-[11px] font-bold text-white group-hover:text-blue transition-colors leading-tight">
                                 Need Help?
                               </h3>
-                              <p className="text-[11px] text-slate-400 leading-snug">
+                              <p className="text-[9.5px] text-slate-400 leading-snug">
                                 Unsure where to start? Get a custom roadmap from our experts.
                               </p>
                             </div>
                           </div>
-                          <div className="text-[11px] font-semibold text-blue flex items-center gap-1 group-hover:gap-2 transition-all whitespace-nowrap shrink-0">
-                            Free Consultation <ArrowRight className="w-3 h-3" />
+                          <div className="text-[10px] font-semibold text-blue flex items-center gap-1 group-hover:gap-2 transition-all whitespace-nowrap shrink-0">
+                            Free Consultation <ArrowRight className="w-2.5 h-2.5" />
                           </div>
                         </Link>
                       </div>
@@ -311,7 +324,7 @@ export default function Header() {
                     className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max max-w-[640px]"
                   >
                     <div className="bg-[#071B38] border border-white/10 rounded-[18px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
-                      <div className="grid grid-cols-2 gap-x-6 gap-y-1 p-5">
+                      <div className="grid grid-cols-2 gap-x-5 gap-y-1 p-5">
                         {registrationItems.map((item) => {
                           const Icon = item.icon;
                           const isActive = pathname === item.href || pathname.replace(/\/$/, "") === item.href;
@@ -320,20 +333,23 @@ export default function Header() {
                               href={item.href}
                               key={item.title}
                               onClick={() => setActiveDropdown(null)}
-                              className={`group flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${
-                                isActive
-                                  ? "bg-white/[0.08] text-gold border border-gold/30 shadow-[0_2px_12px_rgba(212,175,55,0.15)]"
-                                  : "border border-transparent hover:bg-white/[0.06] hover:shadow-[0_4px_20px_-4px_rgba(197,155,80,0.15)]"
-                              }`}
+                              className={`group flex items-start gap-3 px-3.5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${isActive
+                                ? "bg-white/[0.08] text-gold border border-gold/30 shadow-[0_2px_12px_rgba(212,175,55,0.15)]"
+                                : "border border-transparent hover:bg-white/[0.06] hover:shadow-[0_4px_20px_-4px_rgba(197,155,80,0.15)]"
+                                }`}
                             >
-                              <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                                isActive ? "bg-gold text-navy" : "bg-gold/10 group-hover:bg-gold/20 text-gold"
-                              }`}>
+                              <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${isActive ? "bg-gold text-navy" : "bg-gold/10 group-hover:bg-gold/20 text-gold"
+                                }`}>
                                 <Icon className={`w-3.5 h-3.5 ${isActive ? "text-navy" : "text-gold"}`} />
                               </div>
-                              <h3 className={`text-[12.5px] leading-tight transition-colors ${isActive ? "text-gold font-bold" : "text-white group-hover:text-gold font-semibold"}`}>
-                                {item.title}
-                              </h3>
+                              <div className="min-w-0">
+                                <h3 className={`text-[12.5px] leading-tight transition-colors ${isActive ? "text-gold font-bold" : "text-white group-hover:text-gold font-semibold"}`}>
+                                  {item.title}
+                                </h3>
+                                <p className="text-[10.5px] leading-snug text-slate-400 mt-0.5 line-clamp-2">
+                                  {item.description}
+                                </p>
+                              </div>
                             </Link>
                           );
                         })}
