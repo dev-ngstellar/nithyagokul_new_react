@@ -466,6 +466,142 @@ export const registrationsData: RegistrationDetail[] = [
     ]
   },
   {
+    slug: "iso",
+    title: "ISO Certification",
+    shortDesc: "International Organization for Standardization (ISO) certification services to establish global quality, security, and management standards.",
+    longDesc: "ISO certification enhances your organization's credibility, operational efficiency, and market reputation. From ISO 9001 (Quality Management) to ISO 27001 (Information Security), our experts guide you through documentation, internal audits, process alignment, and final certification.",
+    benefits: [
+      "Boosts customer trust and enhances brand credibility globally",
+      "Streamlines business processes and reduces operational errors",
+      "Pre-requisite for many government tenders and enterprise contracts",
+      "Demonstrates commitment to high quality, security, and safety standards"
+    ],
+    eligibility: [
+      "Proprietorships, Partnerships, LLPs, Private Limited & Public Limited entities",
+      "Startups, SMEs, and large enterprises across manufacturing and service sectors",
+      "Organizations seeking compliance with ISO 9001, ISO 14001, ISO 27001, ISO 45001, etc."
+    ],
+    documentsRequired: [
+      "Company Registration Certificate (GST, COI, or Udyam)",
+      "Scope of Business Operations & Organization Structure Chart",
+      "Process Flowcharts & Quality Policy documentation",
+      "Address proof of registered office and operational premises"
+    ],
+    process: [
+      "Initial Consultation: Identifying the right ISO standard suitable for your business model.",
+      "Gap Analysis & Documentation: Reviewing existing workflows and preparing standard operating procedures (SOPs).",
+      "Implementation & Internal Audit: Aligning operations to ISO guidelines and conducting internal review audits.",
+      "Final Certification Audit: Certification body audit and issuance of the official ISO Certificate."
+    ],
+    timeline: "3-7 business days",
+    faqs: [
+      { question: "Which ISO certification is right for my business?", answer: "ISO 9001:2015 (Quality Management System) is ideal for almost all businesses. For IT and software firms, ISO 27001 (Information Security) is recommended. For food businesses, ISO 22000 (Food Safety) is most suitable." },
+      { question: "How long is an ISO certificate valid?", answer: "ISO certificates are typically valid for 3 years, subject to annual surveillance audits to ensure ongoing compliance." }
+    ]
+  },
+  {
+    slug: "icegate",
+    title: "ICEGATE Registration",
+    shortDesc: "Official Indian Customs Electronic Data Interchange Gateway (ICEGATE) registration for importers, exporters, and customs brokers.",
+    longDesc: "ICEGATE is the national portal of Indian Customs that facilitates electronic filing of Shipping Bills, Bills of Entry, and customs declarations. Registering on ICEGATE is essential for cross-border traders to track customs clearance, e-payment of duties, and smooth port operations.",
+    benefits: [
+      "Seamless online filing of Bill of Entry & Shipping Bills with Indian Customs",
+      "Direct online payment of Customs duties and automated duty drawback processing",
+      "Real-time tracking of import/export shipment status and customs clearances",
+      "Integration with DGFT, RBI (EDPMS/IDPMS), and port logistics authorities"
+    ],
+    eligibility: [
+      "Importers and Exporters holding a valid IEC (Import Export Code)",
+      "Customs Broker Agencies & Logistics Service Providers",
+      "Authorized Economic Operators (AEO) and shipping lines"
+    ],
+    documentsRequired: [
+      "Import Export Code (IEC) certificate copy",
+      "Class-3 Digital Signature Certificate (DSC) for primary authorized signatory",
+      "PAN Card and Aadhaar card of the authorized signatory",
+      "Active bank account details linked with AD Code at customs port"
+    ],
+    process: [
+      "Registration Initiated: Creating user profile on the ICEGATE portal using IEC & PAN.",
+      "DSC Token Registration: Registering and pairing Class-3 DSC with ICEGATE account.",
+      "AD Code & Bank Linking: Submitting Authorized Dealer (AD) code for port registration.",
+      "Customs Verification: Verification of credentials by Customs EDI system and account activation."
+    ],
+    timeline: "2-4 business days",
+    faqs: [
+      { question: "Why is ICEGATE registration necessary if I already have an IEC?", answer: "While IEC allows you to trade internationally, ICEGATE is the actual portal where electronic customs declarations, duty payments, and export refunds are processed." },
+      { question: "Do I need a Digital Signature Certificate (DSC) for ICEGATE?", answer: "Yes, a valid Class-3 Digital Signature Certificate (DSC) registered with the signatory's PAN is mandatory for e-filing on ICEGATE." }
+    ]
+  },
+  {
+    slug: "apeda",
+    title: "APEDA Registration",
+    shortDesc: "Agricultural and Processed Food Products Export Development Authority (APEDA) registration & e-RCMC issuance.",
+    longDesc: "APEDA registration is mandatory for businesses engaged in exporting scheduled agricultural, horticultural, and processed food products from India. Obtaining the APEDA Registration-cum-Membership Certificate (RCMC) unlocks export benefits, financial subsidies, and market access worldwide.",
+    benefits: [
+      "Mandatory legal permit for exporting scheduled agricultural & food items",
+      "Access to APEDA export promotion schemes, subsidies, and trade fairs",
+      "Builds international buyer trust with verified exporter credentials",
+      "Provides quality compliance guidance and market intelligence support"
+    ],
+    eligibility: [
+      "Exporters of fruits, vegetables, meat products, dairy, poultry, cereal products, and processed foods",
+      "Merchant exporters, manufacturer exporters, and agricultural producer organizations",
+      "Must possess an active Import Export Code (IEC) issued by DGFT"
+    ],
+    documentsRequired: [
+      "Import Export Code (IEC) Certificate issued by DGFT",
+      "Bank Certificate signed by Authorized Dealer (AD Bank)",
+      "PAN Card of the Proprietorship / Partnership / Company",
+      "Canceled Cheque in the name of the business entity"
+    ],
+    process: [
+      "Document Preparation: Compiling IEC certificate, bank details, and promoter credentials.",
+      "Online Application: Submitting the e-RCMC application on the APEDA portal.",
+      "Fee Payment: Online payment of government membership fees.",
+      "RCMC Issuance: Verification by APEDA officials and issuance of the digital APEDA RCMC."
+    ],
+    timeline: "3-5 business days",
+    faqs: [
+      { question: "Which products come under APEDA scope?", answer: "APEDA covers fruits, vegetables, meat, poultry, dairy, bakery products, confectionery, honey, jaggery, cocoa, cereals, and processed food items." },
+      { question: "How long is the APEDA RCMC certificate valid?", answer: "APEDA RCMC is issued with multi-year validity and can be renewed online by updating export details." }
+    ]
+  },
+  {
+    slug: "lei",
+    title: "Legal Entity Identifier (LEI)",
+    shortDesc: "Unique 20-character global reference code required for financial transactions and RBI regulatory compliance.",
+    longDesc: "The Legal Entity Identifier (LEI) is a 20-character global reference code that uniquely identifies distinct legal entities participating in financial transactions. In India, the RBI mandates LEI registration for corporate borrowers with aggregate exposure of ₹5 Crore and above, as well as large cross-border remittances.",
+    benefits: [
+      "Mandatory RBI compliance for corporate credit exposure & large remittances",
+      "Enhances global financial transparency and counterparty credibility",
+      "Uniquely identifies your entity in global financial databases and banking networks",
+      "Facilitates smooth cross-border trade settlements and corporate borrowing"
+    ],
+    eligibility: [
+      "Private Limited, Public Limited, LLPs, Partnerships & Trusts in India",
+      "Entities having total credit exposure (fund-based and non-fund-based) of ₹5 Crore or more",
+      "Corporates engaging in large cross-border financial transactions & derivatives"
+    ],
+    documentsRequired: [
+      "Certificate of Incorporation / Partnership Deed / Registration Proof",
+      "PAN Card of the entity and authorized signatories",
+      "Audited Financial Statements / Latest Annual Return",
+      "Board Resolution authorizing LEI registration & signatory declaration"
+    ],
+    process: [
+      "Data Collection: Compiling entity details, parent structure, and LEIL forms.",
+      "Application Submission: Filing online application on the LEIL (Legal Entity Identifier India Ltd) portal.",
+      "Document Verification: Validation of corporate details against official MCA/Income Tax records.",
+      "LEI Code Issuance: Allocation of the unique 20-digit global LEI code."
+    ],
+    timeline: "2-3 business days",
+    faqs: [
+      { question: "Is LEI registration mandatory in India?", answer: "Yes, as per RBI guidelines, LEI is mandatory for companies with aggregate credit exposure of ₹5 Crore and above, and for non-individual entities undertaking forex/over-the-counter transactions." },
+      { question: "How often does LEI need renewal?", answer: "LEI codes must be renewed annually to ensure entity information in the global database remains accurate and active." }
+    ]
+  },
+  {
     slug: "business-sale-investment",
     title: "Business Sale & Investment",
     shortDesc: "Helping entrepreneurs buy, sell, invest and grow businesses with confidence.",

@@ -61,26 +61,6 @@ const megaMenuCategories = [
     href: "/services/dsc"
   },
   {
-    icon: Globe,
-    title: "Legal Entity Identifier (LEI)",
-    href: "/services/lei"
-  },
-  {
-    icon: Ship,
-    title: "ICEGATE Registration",
-    href: "/services/icegate"
-  },
-  {
-    icon: Leaf,
-    title: "APEDA Registration",
-    href: "/services/apeda"
-  },
-  {
-    icon: ClipboardCheck,
-    title: "ISO Certification",
-    href: "/services/iso"
-  },
-  {
     icon: TrendingUp,
     title: "ESOP & Share-Based Schemes",
     href: "/services/esop"
@@ -131,6 +111,30 @@ export default function Header() {
       title: "Import/Export Code (IE Code)",
       description: "Obtain your IE Code for international trade and customs clearance.",
       href: "/registrations/ie-code"
+    },
+    {
+      icon: ClipboardCheck,
+      title: "ISO Certification",
+      description: "Obtain ISO certifications (ISO 9001, 27001, etc.) for quality & global standards.",
+      href: "/registrations/iso"
+    },
+    {
+      icon: Ship,
+      title: "ICEGATE Registration",
+      description: "Register on ICEGATE for seamless customs e-filing and port connectivity.",
+      href: "/registrations/icegate"
+    },
+    {
+      icon: Leaf,
+      title: "APEDA Registration",
+      description: "Obtain APEDA registration and e-RCMC for exporting agricultural products.",
+      href: "/registrations/apeda"
+    },
+    {
+      icon: Globe,
+      title: "Legal Entity Identifier (LEI)",
+      description: "Acquire a unique 20-digit LEI code for global financial transactions.",
+      href: "/registrations/lei"
     },
   ];
 
@@ -304,33 +308,32 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 15 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max max-w-[600px]"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max max-w-[640px]"
                   >
                     <div className="bg-[#071B38] border border-white/10 rounded-[18px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
-                      <div className="grid grid-cols-2 gap-0 p-5">
-                        {registrationItems.map((item, idx) => {
+                      <div className="grid grid-cols-2 gap-x-6 gap-y-1 p-5">
+                        {registrationItems.map((item) => {
                           const Icon = item.icon;
-                          const isLastCol = idx === registrationItems.length - 1;
-                          const isActive = pathname === item.href;
+                          const isActive = pathname === item.href || pathname.replace(/\/$/, "") === item.href;
                           return (
                             <Link
                               href={item.href}
                               key={item.title}
                               onClick={() => setActiveDropdown(null)}
-                              className={`group px-5 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/[0.04] cursor-pointer block ${!isLastCol ? "border-r border-white/[0.07]" : ""
-                                }`}
+                              className={`group flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${
+                                isActive
+                                  ? "bg-white/[0.08] text-gold border border-gold/30 shadow-[0_2px_12px_rgba(212,175,55,0.15)]"
+                                  : "border border-transparent hover:bg-white/[0.06] hover:shadow-[0_4px_20px_-4px_rgba(197,155,80,0.15)]"
+                              }`}
                             >
-                              <div className="flex items-center gap-2.5 mb-2">
-                                <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center shrink-0 group-hover:bg-gold/20 transition-colors">
-                                  <Icon className="w-4 h-4 text-gold" />
-                                </div>
-                                <h3 className={`text-[13px] font-bold leading-tight group-hover:text-gold transition-colors ${isActive ? "text-gold" : "text-white"}`}>
-                                  {item.title}
-                                </h3>
+                              <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
+                                isActive ? "bg-gold text-navy" : "bg-gold/10 group-hover:bg-gold/20 text-gold"
+                              }`}>
+                                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-navy" : "text-gold"}`} />
                               </div>
-                              <p className="text-[11px] text-slate-400 leading-[1.6]">
-                                {item.description}
-                              </p>
+                              <h3 className={`text-[12.5px] leading-tight transition-colors ${isActive ? "text-gold font-bold" : "text-white group-hover:text-gold font-semibold"}`}>
+                                {item.title}
+                              </h3>
                             </Link>
                           );
                         })}

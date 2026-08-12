@@ -130,16 +130,7 @@ export default async function RegistrationPage({ params }: PageProps) {
           </h2>
           <p className="text-[16px] md:text-[17px] lg:text-[18px] text-slate-500 leading-[1.8]">
             Ensure you submit digital copies of these KYC documents and office proofs. Our registration specialists will prepare files and submit them to the registry.
-          </p>
-
-          <div className="bg-blue/5 border border-blue/10 p-6 rounded-2xl flex items-center gap-4">
-            <Clock className="w-8 h-8 text-blue shrink-0" />
-            <div>
-              <h4 className="font-serif text-base font-bold text-navy">Expected Timeline</h4>
-              <p className="text-xs text-slate-600 mt-1">{registration.timeline}</p>
-            </div>
-          </div>
-        </SlideUp>
+          </p>        </SlideUp>
         <SlideUp delay={0.2} className="lg:col-span-6 bg-white border border-slate-100 rounded-2xl p-8 space-y-4 shadow-sm">
           {registration.documentsRequired.map((doc, idx) => (
             <div key={idx} className="flex items-start gap-3 text-sm text-slate-700 font-medium">
