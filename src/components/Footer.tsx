@@ -75,7 +75,7 @@ export default function Footer() {
                 Nithya Gokul Associates
               </h3>
               <p className="text-[11px] font-bold text-[#D4A017] uppercase tracking-wider">
-                Since 2012
+                Since 2010
               </p>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed font-light max-w-xs">
