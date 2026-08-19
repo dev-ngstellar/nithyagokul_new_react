@@ -12,7 +12,7 @@ export default function JobApplicationForm({ jobTitle }: { jobTitle: string }) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const formData = new FormData(e.currentTarget);
       formData.append("jobTitle", jobTitle);
@@ -110,7 +110,7 @@ export default function JobApplicationForm({ jobTitle }: { jobTitle: string }) {
             rows={2}
             required
             className="w-full bg-white/50 border border-slate-200/60 rounded-lg px-3 py-2 outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all text-sm resize-none"
-            placeholder="Tell us a bit about yourself..."
+            placeholder="Tell us a bit about yourself 100 words.."
           />
         </div>
 
