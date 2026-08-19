@@ -175,7 +175,7 @@ export default function Header() {
             <div className="absolute left-0 top-1/2 -translate-y-1/2">
               <Link href="/" className="flex items-center group shrink-0">
                 <Image
-                  src="/nga_logo.webp"
+                  src="/nga_logo.png"
                   alt="Nithya Gokul Associates"
                   width={1080}
                   height={564}

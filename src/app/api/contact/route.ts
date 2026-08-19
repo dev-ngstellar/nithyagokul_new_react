@@ -88,7 +88,7 @@ export async function POST(req: Request) {
     // Using plain text to prevent HTML injection
     const mailOptions = {
       from: `"${name}" <${process.env.EMAIL_USER}>`, // Send via the authenticated user
-      to: process.env.MAIL_TO || "gokulrengarajan@gmail.com",
+      to: process.env.MAIL_TO || "hr@nithyagokul.com",
       replyTo: email,
       subject: "New Consultation Request - NGA Website",
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city || "N/A"}\nSelected Service: ${service}\nMessage: ${message}\n\nSubmission Date & Time: ${submissionDate}\nIP Address: ${ip}`,

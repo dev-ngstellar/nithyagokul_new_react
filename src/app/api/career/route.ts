@@ -114,7 +114,7 @@ export async function POST(req: Request) {
     console.log("Preparing email (Admin Notification)");
     const adminMailOptions = {
       from: `"${name}" <${process.env.EMAIL_USER}>`,
-      to: process.env.MAIL_TO || "gokulrengarajan@gmail.com",
+      to: process.env.MAIL_TO || "hr@nithyagokul.com",
       replyTo: email,
       subject: `New Job Application from ${name} - ${jobTitle || "General"}`,
       html: adminTemplate,
