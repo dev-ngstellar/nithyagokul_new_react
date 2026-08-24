@@ -8,7 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu, X, Phone, ChevronDown, FileText,
   Building2, FileCheck, BriefcaseBusiness, ShieldCheck, Scale, ArrowRight,
-  Utensils, Globe, Handshake, BarChart3, Ship, Leaf, ClipboardCheck, TrendingUp
+  Utensils, Globe, Handshake, BarChart3, Ship, Leaf, ClipboardCheck, TrendingUp,
+  Users
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────
@@ -84,6 +85,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileRegistrationsOpen, setMobileRegistrationsOpen] = useState(false);
   const megaMenuRef = useRef<HTMLDivElement>(null);
@@ -103,6 +105,7 @@ export default function Header() {
     if (prevPathname.current !== pathname) {
       setIsOpen(false);
       setActiveDropdown(null);
+      setMobileAboutOpen(false);
       setMobileServicesOpen(false);
       setMobileRegistrationsOpen(false);
       prevPathname.current = pathname;
@@ -148,15 +151,30 @@ export default function Header() {
     },
   ];
 
+  const aboutItems = [
+    {
+      icon: Users,
+      title: "Who We Are",
+      description: "Learn about our mission, core values, leadership & advisory excellence.",
+      href: "/about"
+    },
+    {
+      icon: BriefcaseBusiness,
+      title: "Careers",
+      description: "Explore opportunities and join our team of legal & corporate experts.",
+      href: "/careers"
+    },
+  ];
+
   const isServicesActive = megaMenuCategories.some((cat) => pathname === cat.href || pathname.replace(/\/$/, "") === cat.href);
   const isRegistrationsActive = registrationItems.some((item) => pathname === item.href || pathname.replace(/\/$/, "") === item.href);
+  const isAboutActive = aboutItems.some((item) => pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href)));
 
   const otherLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
     { name: "Trademark & IP", href: "/trademark" },
-    { name: "Careers", href: "/careers" },
     { name: "Template", href: "/templates" },
+    { name: "Background Verification", href: "/background-verification" },
     { name: "Blog", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
   ];
@@ -169,43 +187,92 @@ export default function Header() {
           : "bg-navy border-b border-transparent"
           }`}
       >
-        <div className="max-w-[1280px] mx-auto px-3 sm:px-6 flex items-center justify-between h-full relative">
-          {/* Ungrouped Large Logo (Absolutely Positioned) */}
-          <div className="flex items-center h-full relative z-50">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2">
-              <Link href="/" className="flex items-center group shrink-0">
-                <Image
-                  src="/nga_logo.png"
-                  alt="Nithya Gokul Associates"
-                  width={1080}
-                  height={564}
-                  priority
-                  className="object-contain transition-all duration-300 w-auto h-12 sm:h-14 md:h-18 lg:h-20 xl:h-24 max-w-none"
-                />
-              </Link>
-            </div>
-            {/* Spacer block to reserve width for nav items */}
-            <div className="w-28 sm:w-36 md:w-44 lg:w-48 xl:w-56 shrink-0" />
-          </div>
+        <div className="max-w-[1360px] xl:max-w-[1440px] 2xl:max-w-[1520px] mx-auto px-3 sm:px-6 flex items-center justify-between h-full relative">
+          {/* Logo - Large & Prominently Visible */}
+          <Link href="/" className="flex items-center group shrink-0 mr-3 lg:mr-4 xl:mr-6 z-50">
+            <Image
+              src="/nga_logo.png"
+              alt="Nithya Gokul Associates"
+              width={1080}
+              height={564}
+              priority
+              className="object-contain transition-all duration-300 w-auto h-14 sm:h-16 md:h-20 lg:h-22 xl:h-24 2xl:h-28 max-w-[220px] sm:max-w-[280px] md:max-w-[330px] lg:max-w-[380px] xl:max-w-[420px] py-1"
+            />
+          </Link>
 
-          {/* ── Desktop Navigation ── */}
-          <nav className="hidden xl:flex items-center gap-2 xl:gap-3.5 2xl:gap-5">
+          {/* ── Desktop Navigation (Centered) ── */}
+          <nav className="hidden xl:flex items-center justify-center flex-1 gap-2 xl:gap-2.5 2xl:gap-3.5 px-2 font-sans">
 
-            {/* Home & About Us */}
-            {["Home", "About Us"].map((name) => {
-              const link = otherLinks.find((l) => l.name === name)!;
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={name}
-                  href={link.href}
-                  className={`font-sans text-xs 2xl:text-sm font-medium tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+            {/* Home Link */}
+            <Link
+              href="/"
+              className={`font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 whitespace-nowrap ${pathname === "/" ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                }`}
+            >
+              Home
+            </Link>
+
+            {/* ── ABOUT US DROPDOWN ── */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("about")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button
+                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isAboutActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                  }`}
+              >
+                About Us
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === "about" ? "rotate-180" : ""
                     }`}
-                >
-                  {name}
-                </Link>
-              );
-            })}
+                />
+              </button>
+              <AnimatePresence>
+                {activeDropdown === "about" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 15 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-max min-w-[290px] max-w-[360px]"
+                  >
+                    <div className="bg-[#071B38] border border-white/10 rounded-[18px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
+                      <div className="flex flex-col gap-1 p-3">
+                        {aboutItems.map((item) => {
+                          const Icon = item.icon;
+                          const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                          return (
+                            <Link
+                              href={item.href}
+                              key={item.title}
+                              onClick={() => setActiveDropdown(null)}
+                              className={`group flex items-start gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${isActive
+                                ? "bg-white/[0.08] text-gold border border-gold/30 shadow-[0_2px_12px_rgba(212,175,55,0.15)]"
+                                : "border border-transparent hover:bg-white/[0.06] hover:shadow-[0_4px_20px_-4px_rgba(197,155,80,0.15)]"
+                                }`}
+                            >
+                              <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${isActive ? "bg-gold text-navy" : "bg-gold/10 group-hover:bg-gold/20 text-gold"
+                                }`}>
+                                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-navy" : "text-gold"}`} />
+                              </div>
+                              <div className="min-w-0">
+                                <h3 className={`text-[12.5px] leading-tight transition-colors ${isActive ? "text-gold font-bold" : "text-white group-hover:text-gold font-semibold"}`}>
+                                  {item.title}
+                                </h3>
+                                <p className="text-[10.5px] leading-snug text-slate-400 mt-0.5">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* ── SERVICES MEGA MENU ── */}
             <div
@@ -215,7 +282,7 @@ export default function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-0.5 font-sans text-xs 2xl:text-sm font-medium tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isServicesActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isServicesActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                   }`}
               >
                 Services
@@ -305,7 +372,7 @@ export default function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-0.5 font-sans text-xs 2xl:text-sm font-medium tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isRegistrationsActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isRegistrationsActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                   }`}
               >
                 Registrations
@@ -361,14 +428,14 @@ export default function Header() {
             </div>
 
             {/* Remaining simple links */}
-            {["Trademark & IP", "Careers", "Template", "Blog", "Contact Us"].map((name) => {
+            {["Trademark & IP", "Template", "Background Verification", "Blog", "Contact Us"].map((name) => {
               const link = otherLinks.find((l) => l.name === name)!;
-              const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates"));
+              const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates")) || (link.name === "Background Verification" && pathname.startsWith("/background-verification"));
               return (
                 <Link
                   key={name}
                   href={link.href}
-                  className={`font-sans text-xs 2xl:text-sm font-medium tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                  className={`font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                     }`}
                 >
                   {name}
@@ -378,17 +445,17 @@ export default function Header() {
           </nav>
 
           {/* ── Desktop CTAs ── */}
-          <div className="hidden xl:flex items-center gap-4 2xl:gap-4 shrink-0 ml-1">
+          <div className="hidden xl:flex items-center gap-2.5 xl:gap-3.5 shrink-0 ml-2 lg:ml-4">
             <a
               href="tel:+919710909727"
-              className="flex items-center gap-1 text-white/90 hover:text-blue transition-colors font-sans text-xs 2xl:text-sm font-medium whitespace-nowrap"
+              className="flex items-center gap-1 text-white/90 hover:text-blue transition-colors font-sans text-[11px] xl:text-[12px] 2xl:text-[13.5px] font-medium whitespace-nowrap"
             >
               <Phone className="w-3.5 h-3.5 text-blue shrink-0" />
               <span>+91 97109 09727</span>
             </a>
             <Link
               href="/contact#consultation"
-              className="px-3 2xl:px-4 py-2 bg-blue text-white rounded-lg font-sans text-xs 2xl:text-sm font-semibold hover:bg-blue/90 transition-all duration-300 hover:shadow-lg hover:shadow-blue/20 whitespace-nowrap"
+              className="px-3 xl:px-4 py-2 bg-blue text-white rounded-lg font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-semibold hover:bg-blue/90 transition-all duration-300 hover:shadow-lg hover:shadow-blue/20 whitespace-nowrap shrink-0"
             >
               Request Consultation
             </Link>
@@ -427,21 +494,61 @@ export default function Header() {
             >
               <div className="flex-1 overflow-y-auto space-y-1 pr-1">
 
-                {/* Home & About */}
-                {[{ name: "Home", href: "/" }, { name: "About Us", href: "/about" }].map((link) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${isActive ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
-                        }`}
-                    >
-                      {link.name}
-                    </Link>
-                  );
-                })}
+                {/* Home */}
+                <Link
+                  href="/"
+                  onClick={() => setIsOpen(false)}
+                  className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${pathname === "/" ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
+                    }`}
+                >
+                  Home
+                </Link>
+
+                {/* ── ABOUT US Accordion ── */}
+                <div className="border border-white/[0.08] rounded-xl overflow-hidden">
+                  <button
+                    onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                    className={`w-full flex items-center justify-between px-4 py-3.5 text-base font-medium transition-colors ${isAboutActive || mobileAboutOpen ? "text-gold bg-white/5" : "text-white/90 hover:text-gold"
+                      }`}
+                  >
+                    About Us
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {mobileAboutOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="overflow-hidden bg-white/[0.02] border-t border-white/[0.06]"
+                      >
+                        <div className="p-3 space-y-1">
+                          {aboutItems.map((item) => {
+                            const Icon = item.icon;
+                            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                            return (
+                              <Link
+                                key={item.title}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold transition-colors border border-white/[0.06] rounded-xl overflow-hidden ${isActive ? "text-gold bg-white/[0.04]" : "text-white/80 hover:text-gold hover:bg-white/[0.04]"
+                                  }`}
+                              >
+                                <div className="w-6 h-6 rounded-md bg-gold/10 flex items-center justify-center shrink-0">
+                                  <Icon className="w-3.5 h-3.5 text-gold" />
+                                </div>
+                                <span className="flex-1 text-left">{item.title}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
                 {/* ── SERVICES Accordion ── */}
                 <div className="border border-white/[0.08] rounded-xl overflow-hidden">
@@ -536,9 +643,9 @@ export default function Header() {
                 </div>
 
                 {/* Remaining links in mobile drawer */}
-                {["Trademark & IP", "Careers", "Template", "Blog", "Contact Us"].map((name) => {
+                {["Trademark & IP", "Template", "Background Verification", "Blog", "Contact Us"].map((name) => {
                   const link = otherLinks.find((l) => l.name === name)!;
-                  const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates"));
+                  const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates")) || (link.name === "Background Verification" && pathname.startsWith("/background-verification"));
                   return (
                     <Link
                       key={name}
