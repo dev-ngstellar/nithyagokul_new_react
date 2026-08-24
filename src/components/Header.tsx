@@ -187,26 +187,26 @@ export default function Header() {
           : "bg-navy border-b border-transparent"
           }`}
       >
-        <div className="max-w-[1360px] xl:max-w-[1440px] 2xl:max-w-[1520px] mx-auto px-3 sm:px-6 flex items-center justify-between h-full relative">
+        <div className="max-w-[1440px] 2xl:max-w-[1680px] mx-auto px-4 sm:px-6 flex items-center justify-between h-full relative">
           {/* Logo - Large & Prominently Visible */}
-          <Link href="/" className="flex items-center group shrink-0 mr-3 lg:mr-4 xl:mr-6 z-50">
+          <Link href="/" className="flex items-center group shrink-0 mr-2 xl:mr-4 2xl:mr-6 z-50">
             <Image
               src="/nga_logo.png"
               alt="Nithya Gokul Associates"
               width={1080}
               height={564}
               priority
-              className="object-contain transition-all duration-300 w-auto h-14 sm:h-16 md:h-20 lg:h-22 xl:h-24 2xl:h-28 max-w-[220px] sm:max-w-[280px] md:max-w-[330px] lg:max-w-[380px] xl:max-w-[420px] py-1"
+              className="object-contain transition-all duration-300 w-auto h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-24 max-w-[180px] sm:max-w-[220px] md:max-w-[260px] lg:max-w-[300px] xl:max-w-[340px] py-1"
             />
           </Link>
 
-          {/* ── Desktop Navigation (Centered) ── */}
-          <nav className="hidden xl:flex items-center justify-center flex-1 gap-2 xl:gap-2.5 2xl:gap-3.5 px-2 font-sans">
+          {/* ── Desktop Navigation ── */}
+          <nav className="hidden xl:flex items-center justify-center shrink gap-2 xl:gap-3 2xl:gap-5 font-sans">
 
             {/* Home Link */}
             <Link
               href="/"
-              className={`font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 whitespace-nowrap ${pathname === "/" ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+              className={`font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-medium tracking-tight xl:tracking-wide transition-colors py-2 whitespace-nowrap ${pathname === "/" ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                 }`}
             >
               Home
@@ -219,7 +219,7 @@ export default function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isAboutActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isAboutActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                   }`}
               >
                 About Us
@@ -282,7 +282,7 @@ export default function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isServicesActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isServicesActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                   }`}
               >
                 Services
@@ -372,7 +372,7 @@ export default function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isRegistrationsActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                className={`flex items-center gap-0.5 font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-medium tracking-tight xl:tracking-wide transition-colors py-2 cursor-pointer whitespace-nowrap ${isRegistrationsActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                   }`}
               >
                 Registrations
@@ -435,7 +435,7 @@ export default function Header() {
                 <Link
                   key={name}
                   href={link.href}
-                  className={`font-sans text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] font-medium tracking-tight xl:tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                  className={`font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-medium tracking-tight xl:tracking-wide transition-colors py-2 whitespace-nowrap ${isActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
                     }`}
                 >
                   {name}
@@ -445,10 +445,10 @@ export default function Header() {
           </nav>
 
           {/* ── Desktop CTAs ── */}
-          <div className="hidden xl:flex items-center gap-2.5 xl:gap-3.5 shrink-0 ml-2 lg:ml-4">
+          <div className="hidden xl:flex items-center gap-2 xl:gap-3 shrink-0 ml-auto z-50">
             <a
               href="tel:+919710909727"
-              className="flex items-center gap-1 text-white/90 hover:text-blue transition-colors font-sans text-[11px] xl:text-[12px] 2xl:text-[13.5px] font-medium whitespace-nowrap"
+              className="flex items-center gap-1 text-white/90 hover:text-blue transition-colors font-sans text-[11px] xl:text-[12px] 2xl:text-[13px] font-medium whitespace-nowrap"
             >
               <Phone className="w-3.5 h-3.5 text-blue shrink-0" />
               <span>+91 97109 09727</span>
