@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
       <section className="py-[70px] md:py-[90px] lg:py-[120px] bg-slate-50/50">
         <div className="max-w-[900px] mx-auto px-6">
           <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-12 shadow-sm text-slate-700 font-sans leading-relaxed space-y-10">
-            
+
             {/* Section 1 */}
             <div className="space-y-4">
               <h2 className="font-serif text-2xl font-bold text-navy border-b border-slate-100 pb-2">
@@ -350,7 +350,7 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-slate-50 border border-slate-100 rounded-xl p-6 space-y-2 text-[15px]">
                   <p><strong>Name:</strong> CS R. Nithya Gokul</p>
                   <p><strong>E-mail:</strong> <a href="mailto:office@nithyagokul.com" className="text-blue hover:underline">office@nithyagokul.com</a></p>
-                  <p><strong>Phone:</strong> <a href="tel:+919710909727" className="text-blue hover:underline">+91 97109 09727</a></p>
+                  <p><strong>Phone:</strong> <a href="tel:+9176958 58055" className="text-blue hover:underline">+91 76958 58055</a></p>
                 </div>
               </div>
             </div>

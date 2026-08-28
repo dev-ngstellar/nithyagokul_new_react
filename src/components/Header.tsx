@@ -447,11 +447,11 @@ export default function Header() {
           {/* ── Desktop CTAs ── */}
           <div className="hidden xl:flex items-center gap-2 xl:gap-3 shrink-0 ml-auto z-50">
             <a
-              href="tel:+919710909727"
+              href="tel:+917695858055"
               className="flex items-center gap-1 text-white/90 hover:text-blue transition-colors font-sans text-[11px] xl:text-[12px] 2xl:text-[13px] font-medium whitespace-nowrap"
             >
               <Phone className="w-3.5 h-3.5 text-blue shrink-0" />
-              <span>+91 97109 09727</span>
+              <span>+91 76958 58055</span>
             </a>
             <Link
               href="/contact#consultation"
@@ -663,11 +663,11 @@ export default function Header() {
               {/* Mobile Footer CTAs */}
               <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
                 <a
-                  href="tel:+919710909727"
+                  href="tel:+917695858055"
                   className="flex items-center justify-center gap-2 py-3 bg-white/5 rounded-lg text-white font-medium hover:bg-white/10 transition-colors"
                 >
                   <Phone className="w-4 h-4 text-blue" />
-                  <span>+91 97109 09727</span>
+                  <span>+91 76958 58055</span>
                 </a>
                 <Link
                   href="/contact#consultation"

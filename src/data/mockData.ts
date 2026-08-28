@@ -750,11 +750,11 @@ export const generalFaqs: FAQItem[] = [
   },
   {
     question: "How do I book a consultation with your experts?",
-    answer: "You can book a consultation directly by clicking our 'Request Consultation' button, filling out the contact form, or calling us at our official hotline +91 97109 09727."
+    answer: "You can book a consultation directly by clicking our 'Request Consultation' button, filling out the contact form, or calling us at our official hotline +91 76958 58055."
   },
   {
     question: "Where is your office located?",
-    answer: "Our main corporate office is located in Chennai, Tamil Nadu, and we service clients across multiple cities globally."
+    answer: "Our main corporate office is located in Erode, Tamil Nadu, and we service clients across multiple cities globally."
   },
   {
     question: "What is your average timeline for company registration?",

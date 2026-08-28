@@ -69,8 +69,8 @@ export default function ContactPage() {
                       <Phone className="w-3.5 h-3.5 text-gold group-hover:text-white transition-colors duration-300" />
                     </div>
                     <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1">Phone</h3>
-                    <a href="tel:+919710909727" className="text-base font-bold text-navy hover:text-gold transition-colors">
-                      +91 9710909727
+                    <a href="tel:+917695858055" className="text-base font-bold text-navy hover:text-gold transition-colors">
+                      +91 76958 58055
                     </a>
                   </div>
                 </SlideUp>
@@ -100,8 +100,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2">Head Office</h3>
-                      <div className="font-serif text-base font-bold text-navy mb-0.5">CS R Nithya Gokul LLB, FCS</div>
-                      <div className="text-[11px] text-gold font-bold mb-2 uppercase tracking-widest">Company Secretary</div>
+                      <div className="font-serif text-base font-bold text-navy mb-0.5">Nithya Gokul Associates</div>
+                      <div className="text-[11px] text-gold font-bold mb-2 uppercase tracking-widest">Erode Office</div>
                       <p className="text-slate-600 leading-[1.5] text-[14px]">
                         Bharathipalayam 1st Street<br />
                         Opposite lane to Kotak Mahindra Bank<br />
