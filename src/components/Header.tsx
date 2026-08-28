@@ -175,7 +175,7 @@ export default function Header() {
     { name: "Trademark & IP", href: "/trademark" },
     { name: "Template", href: "/templates" },
     { name: "Background Verification", href: "/background-verification" },
-    { name: "Blog", href: "/blog" },
+    { name: "Blog", href: "/nithya-gokul-associates-business-journey" },
     { name: "Contact Us", href: "/contact" },
   ];
 
