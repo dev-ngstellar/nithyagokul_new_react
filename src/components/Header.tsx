@@ -9,7 +9,7 @@ import {
   Menu, X, Phone, ChevronDown, FileText,
   Building2, FileCheck, BriefcaseBusiness, ShieldCheck, Scale, ArrowRight,
   Utensils, Globe, Handshake, BarChart3, Ship, Leaf, ClipboardCheck, TrendingUp,
-  Users
+  Users, Award
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────
@@ -39,6 +39,12 @@ const megaMenuCategories = [
     title: "Trademark & Governance",
     description: "Protect your brand with trademark registration & governance support.",
     href: "/services/trademark-governance"
+  },
+  {
+    icon: Award,
+    title: "Trademark & IP",
+    description: "End-to-end trademark search, filing, and intellectual property protection.",
+    href: "/trademark"
   },
   {
     icon: Handshake,
@@ -88,6 +94,7 @@ export default function Header() {
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileRegistrationsOpen, setMobileRegistrationsOpen] = useState(false);
+  const [mobileESGOpen, setMobileESGOpen] = useState(false);
   const megaMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -108,6 +115,7 @@ export default function Header() {
       setMobileAboutOpen(false);
       setMobileServicesOpen(false);
       setMobileRegistrationsOpen(false);
+      setMobileESGOpen(false);
       prevPathname.current = pathname;
     }
   }, [pathname]);
@@ -170,9 +178,19 @@ export default function Header() {
   const isRegistrationsActive = registrationItems.some((item) => pathname === item.href || pathname.replace(/\/$/, "") === item.href);
   const isAboutActive = aboutItems.some((item) => pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href)));
 
+  const esgItems = [
+    {
+      icon: Leaf,
+      title: "ESG Reporting",
+      description: "End-to-end ESG assessment, strategy, data collection, and verified sustainability reporting.",
+      href: "/esg-reporting"
+    },
+  ];
+
+  const isESGActive = pathname === "/esg-reporting" || pathname.startsWith("/esg-reporting");
+
   const otherLinks = [
     { name: "Home", href: "/" },
-    { name: "Trademark & IP", href: "/trademark" },
     { name: "Template", href: "/templates" },
     { name: "Background Verification", href: "/background-verification" },
     { name: "Blog", href: "/nithya-gokul-associates-business-journey" },
@@ -302,9 +320,41 @@ export default function Header() {
                     className="fixed top-[var(--header-h)] left-1/2 -translate-x-1/2 mt-0 z-50 w-[95vw] max-w-[1240px]"
                   >
                     <div className="bg-[#071B38] border border-white/10 rounded-2xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)] overflow-hidden">
-                      {/* ── 5-Column Grid (2 Rows × 5 Columns with Subtitles) ── */}
-                      <div className="grid grid-cols-5 gap-x-3 gap-y-2 p-4 pb-3">
-                        {megaMenuCategories.map((cat) => {
+                      {/* ── Row 1 & 2: 4-Column Grid (8 items = 2 full rows) ── */}
+                      <div className="grid grid-cols-4 gap-x-3 gap-y-2 p-4 pb-2">
+                        {megaMenuCategories.slice(0, 8).map((cat) => {
+                          const Icon = cat.icon;
+                          const isActive = pathname === cat.href || pathname.replace(/\/$/, "") === cat.href;
+                          return (
+                            <Link
+                              href={cat.href}
+                              key={cat.title}
+                              onClick={() => setActiveDropdown(null)}
+                              className={`group flex items-start gap-2.5 px-3 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${isActive
+                                ? "bg-white/[0.08] text-gold border border-gold/30"
+                                : "border border-transparent hover:bg-white/[0.05]"
+                                }`}
+                            >
+                              <div className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 mt-0.5 transition-colors ${isActive ? "bg-gold text-navy" : "bg-gold/10 group-hover:bg-gold/20 text-gold"
+                                }`}>
+                                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-navy" : "text-gold"}`} />
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <h3 className={`text-[12px] leading-tight transition-colors ${isActive ? "text-gold font-bold" : "text-white group-hover:text-gold font-semibold"}`}>
+                                  {cat.title}
+                                </h3>
+                                <p className="text-[10px] leading-relaxed text-slate-400 mt-1">
+                                  {cat.description}
+                                </p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      {/* ── Row 3: 3-Column Grid (remaining items = 1 full row, no gaps) ── */}
+                      <div className="grid grid-cols-3 gap-x-3 gap-y-2 px-4 pb-3 pt-0">
+                        {megaMenuCategories.slice(8).map((cat) => {
                           const Icon = cat.icon;
                           const isActive = pathname === cat.href || pathname.replace(/\/$/, "") === cat.href;
                           return (
@@ -427,8 +477,17 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
+            {/* ── ESG REPORTING link ── */}
+            <Link
+              href="/esg-reporting"
+              className={`font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-medium tracking-tight xl:tracking-wide transition-colors py-2 whitespace-nowrap ${isESGActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                }`}
+            >
+              ESG Reporting
+            </Link>
+
             {/* Remaining simple links */}
-            {["Trademark & IP", "Template", "Background Verification", "Blog", "Contact Us"].map((name) => {
+            {["Template", "Background Verification", "Blog", "Contact Us"].map((name) => {
               const link = otherLinks.find((l) => l.name === name)!;
               const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates")) || (link.name === "Background Verification" && pathname.startsWith("/background-verification"));
               return (
@@ -642,8 +701,18 @@ export default function Header() {
                   </AnimatePresence>
                 </div>
 
+                {/* ── ESG REPORTING Mobile Link ── */}
+                <Link
+                  href="/esg-reporting"
+                  onClick={() => setIsOpen(false)}
+                  className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${isESGActive ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
+                    }`}
+                >
+                  ESG Reporting
+                </Link>
+
                 {/* Remaining links in mobile drawer */}
-                {["Trademark & IP", "Template", "Background Verification", "Blog", "Contact Us"].map((name) => {
+                {["Template", "Background Verification", "Blog", "Contact Us"].map((name) => {
                   const link = otherLinks.find((l) => l.name === name)!;
                   const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates")) || (link.name === "Background Verification" && pathname.startsWith("/background-verification"));
                   return (

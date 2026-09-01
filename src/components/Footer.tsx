@@ -118,6 +118,7 @@ export default function Footer() {
                 { name: "About Us", href: "/about" },
                 { name: "Services", href: "/services/secretarial-consulting" },
                 { name: "Registrations", href: "/registrations/fssai-license" },
+                { name: "ESG Reporting", href: "/esg-reporting" },
                 { name: "Careers", href: "/careers" },
                 { name: "Contact Us", href: "/contact" }
               ].map((link, idx) => (
