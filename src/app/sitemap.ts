@@ -1,4 +1,7 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
+
 import { servicesData, registrationsData, openPositions } from "@/data/mockData";
 import { categoriesData } from "@/data/categoryData";
 
@@ -13,11 +16,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/contact",
     "/careers",
     "/esg-reporting",
+    "/mergers-acquisitions",
     "/background-verification",
     "/trademark",
     "/privacy-policy",
     "/terms-conditions",
     "/nithya-gokul-associates-business-journey",
+    "/blog",
     "/services",
     "/registrations",
     "/registrations/fssai-license",

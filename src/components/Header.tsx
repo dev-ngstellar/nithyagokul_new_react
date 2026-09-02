@@ -188,12 +188,13 @@ export default function Header() {
   ];
 
   const isESGActive = pathname === "/esg-reporting" || pathname.startsWith("/esg-reporting");
+  const isMAActive = pathname === "/mergers-acquisitions" || pathname.startsWith("/mergers-acquisitions");
 
   const otherLinks = [
     { name: "Home", href: "/" },
     { name: "Template", href: "/templates" },
     { name: "Background Verification", href: "/background-verification" },
-    { name: "Blog", href: "/nithya-gokul-associates-business-journey" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -486,8 +487,17 @@ export default function Header() {
               ESG Reporting
             </Link>
 
+            {/* ── MERGERS & ACQUISITIONS link ── */}
+            <Link
+              href="/mergers-acquisitions"
+              className={`font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-medium tracking-tight xl:tracking-wide transition-colors py-2 whitespace-nowrap ${isMAActive ? "text-gold border-b-2 border-gold" : "text-white/90 hover:text-gold"
+                }`}
+            >
+              Mergers & Acquisitions
+            </Link>
+
             {/* Remaining simple links */}
-            {["Template", "Background Verification", "Blog", "Contact Us"].map((name) => {
+            {["Template", "Background Verification", "Blog"].map((name) => {
               const link = otherLinks.find((l) => l.name === name)!;
               const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates")) || (link.name === "Background Verification" && pathname.startsWith("/background-verification"));
               return (
@@ -516,7 +526,7 @@ export default function Header() {
               href="/contact#consultation"
               className="px-3 xl:px-4 py-2 bg-blue text-white rounded-lg font-sans text-[11.5px] xl:text-[12.5px] 2xl:text-sm font-semibold hover:bg-blue/90 transition-all duration-300 hover:shadow-lg hover:shadow-blue/20 whitespace-nowrap shrink-0"
             >
-              Request Consultation
+              Contact Us
             </Link>
           </div>
 
@@ -711,8 +721,18 @@ export default function Header() {
                   ESG Reporting
                 </Link>
 
+                {/* ── MERGERS & ACQUISITIONS Mobile Link ── */}
+                <Link
+                  href="/mergers-acquisitions"
+                  onClick={() => setIsOpen(false)}
+                  className={`block text-base font-medium py-3 px-3 rounded-lg transition-colors ${isMAActive ? "text-gold bg-white/5" : "text-white/90 hover:text-gold hover:bg-white/5"
+                    }`}
+                >
+                  Mergers &amp; Acquisitions
+                </Link>
+
                 {/* Remaining links in mobile drawer */}
-                {["Template", "Background Verification", "Blog", "Contact Us"].map((name) => {
+                {["Template", "Background Verification", "Blog"].map((name) => {
                   const link = otherLinks.find((l) => l.name === name)!;
                   const isActive = pathname === link.href || (link.name === "Template" && pathname.startsWith("/templates")) || (link.name === "Background Verification" && pathname.startsWith("/background-verification"));
                   return (

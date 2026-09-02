@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Calendar,
   Clock,
@@ -102,64 +103,62 @@ export default function BlogPage() {
         }}
       />
 
-      {/* Hero Banner (Preserved Original Hero Section) */}
-      <section className="bg-navy text-white py-[70px] md:py-[90px] lg:py-[120px] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,#071B38,#0F2E5E)]" />
-        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-blue/5 rounded-full blur-[100px] pointer-events-none" />
-
-        <div className="max-w-[1280px] mx-auto px-6 relative z-10 text-center space-y-4">
-          <FadeIn>
-            <span className="text-xs uppercase tracking-widest text-gold font-semibold mb-2 block">
-              Knowledge &amp; Insights
-            </span>
-            <h1 className="font-serif text-4xl md:text-[52px] lg:text-[64px] font-bold leading-[1.1]">
-              NGA Knowledge Hub
-            </h1>
-            <p className="text-[16px] md:text-[18px] text-slate-300 max-w-xl mx-auto leading-[1.8]">
-              Expert commentary, compliance updates, and guides to help you navigate corporate governance, trademarks, and business operations.
-            </p>
-          </FadeIn>
+      {/* Dedicated Article Hero Banner Image */}
+      <section className="relative bg-navy text-white pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        {/* Background Image with Dark Navy Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-banner/sec-advisory.webp"
+            alt="Corporate Advisory Banner"
+            fill
+            priority
+            className="object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/90 to-navy/70" />
         </div>
-      </section>
 
-      {/* Main Article Content Container */}
-      <main className="py-[60px] md:py-[90px] max-w-[1000px] mx-auto px-6">
-        <SlideUp>
-          {/* Article Header Card */}
-          <div className="bg-white border border-slate-200/80 rounded-3xl p-6 md:p-10 shadow-[0_10px_30px_rgba(0,0,0,0.03)] mb-10">
-            <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="bg-gold/15 text-navy text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+        <div className="max-w-[1000px] mx-auto px-6 relative z-10 space-y-6">
+          <FadeIn className="space-y-6">
+            {/* Breadcrumbs & Badges */}
+            <div className="flex flex-wrap items-center gap-3">
+              <Link href="/blog" className="text-xs uppercase tracking-wider text-gold hover:text-white font-semibold transition-colors">
+                Blog
+              </Link>
+              <span className="text-slate-500 text-xs">•</span>
+              <span className="bg-gold/20 text-gold border border-gold/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">
                 Corporate Governance &amp; Strategy
               </span>
-              <span className="bg-navy/5 text-navy text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+              <span className="bg-white/10 text-slate-200 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm flex items-center gap-1.5 border border-white/10">
                 <MapPin className="w-3.5 h-3.5 text-gold" /> Erode, Tamil Nadu
               </span>
             </div>
 
-            <h1 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-bold text-navy leading-[1.25] mb-6">
+            {/* Main Article Title */}
+            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.2] text-white">
               Building a Business That Lasts: The Journey of Nithya Gokul Associates
             </h1>
 
-            {/* Metadata bar */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-slate-100 text-slate-500 text-xs md:text-sm">
+            {/* Author Metadata Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10 text-slate-300 text-xs md:text-sm">
               <div className="flex flex-wrap items-center gap-4 md:gap-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-navy font-bold text-xs">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-10 h-10 rounded-full bg-gold/20 text-gold border border-gold/40 flex items-center justify-center font-serif font-bold text-xs">
                     CS
                   </div>
                   <div>
-                    <span className="block font-semibold text-slate-800 text-xs md:text-sm">
+                    <span className="block font-semibold text-white text-xs md:text-sm">
                       CS Rajmohan Nithya
                     </span>
-                    <span className="text-[11px] text-slate-400">Founder &amp; Practising Company Secretary</span>
+                    <span className="text-[11px] text-slate-300">Founder &amp; Practising CS</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5">
+
+                <div className="flex items-center gap-1.5 text-slate-300">
                   <Calendar className="w-4 h-4 text-gold" />
                   <span>June 2026</span>
                 </div>
-                <div className="flex items-center gap-1.5">
+
+                <div className="flex items-center gap-1.5 text-slate-300">
                   <Clock className="w-4 h-4 text-gold" />
                   <span>8 min read</span>
                 </div>
@@ -167,14 +166,18 @@ export default function BlogPage() {
 
               <button
                 onClick={handleShare}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold backdrop-blur-md border border-white/15 transition-all shadow-sm"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Share2 className="w-3.5 h-3.5" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Share2 className="w-3.5 h-3.5 text-gold" />}
                 <span>{copied ? "Link Copied!" : "Share Article"}</span>
               </button>
             </div>
-          </div>
-        </SlideUp>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Main Article Content Container */}
+      <main className="py-[60px] md:py-[80px] max-w-[1000px] mx-auto px-6">
 
         {/* Highlight Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
