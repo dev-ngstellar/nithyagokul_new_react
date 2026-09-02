@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: category?.metadata?.ogTitle || "Digital Signature Certificate (DSC)",
     description: category?.metadata?.description,
-    url: "https://nithyagokul.com/services/dsc",
+    url: "https://nithyagokul.in/services/dsc",
     siteName: "Nithya Gokul Associates",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: category?.metadata?.description,
   },
   alternates: {
-    canonical: "https://nithyagokul.com/services/dsc",
+    canonical: "https://nithyagokul.in/services/dsc",
   },
 };
 

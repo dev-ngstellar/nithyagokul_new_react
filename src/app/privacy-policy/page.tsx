@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
                 <li className="flex items-start gap-2">
                   <span className="text-gold font-semibold mt-0.5">a.</span>
                   <p>
-                    This Website with the URL of <a href="https://www.nithyagokul.com" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">www.nithyagokul.com</a> (“Website/Site”) is operated by nithyagokul (“We/Our/Us”). We are committed to protecting and respecting your privacy. We do collect your personal information and process your personal data in accordance with the IT Act, 2000 (21 of 2000) and other national and state laws which relate to the processing of personal data. Please read the following carefully to understand our views and practices regarding your personal data.
+                    This Website with the URL of <a href="https://www.nithyagokul.in" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">www.nithyagokul.in</a> (“Website/Site”) is operated by nithyagokul (“We/Our/Us”). We are committed to protecting and respecting your privacy. We do collect your personal information and process your personal data in accordance with the IT Act, 2000 (21 of 2000) and other national and state laws which relate to the processing of personal data. Please read the following carefully to understand our views and practices regarding your personal data.
                   </p>
                 </li>
                 <li className="flex items-start gap-2">

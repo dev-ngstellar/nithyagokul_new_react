@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: category?.metadata?.ogTitle || "ESOP & Share-Based Benefit Schemes",
     description: category?.metadata?.description,
-    url: "https://nithyagokul.com/services/esop",
+    url: "https://nithyagokul.in/services/esop",
     siteName: "Nithya Gokul Associates",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: category?.metadata?.description,
   },
   alternates: {
-    canonical: "https://nithyagokul.com/services/esop",
+    canonical: "https://nithyagokul.in/services/esop",
   },
 };
 

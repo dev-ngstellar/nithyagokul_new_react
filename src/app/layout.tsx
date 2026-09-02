@@ -22,11 +22,14 @@ export const metadata: Metadata = {
     default: "Nithya Gokul Associates | Company Secretaries & Legal Advisors",
   },
   description: "Corporate consulting, secretarial audits, trademark registrations, company incorporations, and business advisory services by Nithya Gokul Associates.",
-  metadataBase: new URL("https://nithyagokul.com"),
+  metadataBase: new URL("https://nithyagokul.in"),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://nithyagokul.com",
+    url: "https://nithyagokul.in",
     title: "Nithya Gokul Associates | Legal & Compliance Experts",
     description: "Premium corporate compliance, secretarial audit, brand registration, and business valuations.",
     siteName: "Nithya Gokul Associates",

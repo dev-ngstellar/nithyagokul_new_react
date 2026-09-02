@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: category.metadata.ogTitle,
     description: category.metadata.description,
-    url: "https://nithyagokul.com/services/fema-foreign-investment",
+    url: "https://nithyagokul.in/services/fema-foreign-investment",
     siteName: "Nithya Gokul Associates",
     type: "website",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: category.metadata.description,
   },
   alternates: {
-    canonical: "https://nithyagokul.com/services/fema-foreign-investment",
+    canonical: "https://nithyagokul.in/services/fema-foreign-investment",
   },
 };
 

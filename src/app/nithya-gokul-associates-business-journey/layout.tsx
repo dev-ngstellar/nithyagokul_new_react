@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Nithya Gokul Associates: Building a Business on Trust, Governance & Growth",
     description:
       "Discover the journey of Nithya Gokul Associates, from a one-person practice to a growing corporate advisory firm built on trust, governance, people, process and technology.",
-    url: "https://nithyagokul.com/nithya-gokul-associates-business-journey",
+    url: "https://nithyagokul.in/nithya-gokul-associates-business-journey",
     type: "article",
     siteName: "Nithya Gokul Associates",
   },

@@ -3,7 +3,7 @@ import YesterdayDate from "@/components/YesterdayDate";
 
 export const metadata = {
   title: "Terms & Conditions | Nithya Gokul Associates",
-  description: "Read our terms and conditions governing the use of nithyagokul.com and our corporate secretarial and legal advisory services.",
+  description: "Read our terms and conditions governing the use of nithyagokul.in and our corporate secretarial and legal advisory services.",
 };
 
 export default function TermsConditionsPage() {
@@ -34,11 +34,11 @@ export default function TermsConditionsPage() {
       <section className="py-[70px] md:py-[90px] lg:py-[120px] bg-slate-50/50">
         <div className="max-w-[900px] mx-auto px-6">
           <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-12 shadow-sm text-slate-700 font-sans leading-relaxed space-y-8">
-            
+
             {/* Introductory Text */}
             <div className="space-y-4 text-slate-600 text-[15px] md:text-[16px] leading-[1.7]">
               <p>
-                Thank you for visiting <a href="https://www.nithyagokul.com" className="text-blue hover:underline">nithyagokul.com</a>. This website is owned and operated by Nithya Gokul Associates, with office at CS R Nithya Gokul LLB,FCS., Company Secretary, Bharathipalayam 1 Street Opposite lane to Kotak Mahindra Bank Nethaji Nagar, Moolapalam, Erode – 638002. The use of this website and services on this website provided by Nithya Gokul (hereinafter referred to as “Owner“) are subject to the following Terms &amp; Conditions (hereinafter the “Terms of Service“), all parts and sub-parts of which are specifically incorporated by reference here. Following are the Terms of Service governing your use of <a href="https://www.nithyagokul.com" className="text-blue hover:underline">nithyagokul.com</a> (the “Website“), all pages on the Website and any services provided by or on this Website (“Services“).
+                Thank you for visiting <a href="https://www.nithyagokul.in" className="text-blue hover:underline">nithyagokul.in</a>. This website is owned and operated by Nithya Gokul Associates, with office at CS R Nithya Gokul LLB,FCS., Company Secretary, Bharathipalayam 1 Street Opposite lane to Kotak Mahindra Bank Nethaji Nagar, Moolapalam, Erode – 638002. The use of this website and services on this website provided by Nithya Gokul (hereinafter referred to as “Owner“) are subject to the following Terms &amp; Conditions (hereinafter the “Terms of Service“), all parts and sub-parts of which are specifically incorporated by reference here. Following are the Terms of Service governing your use of <a href="https://www.nithyagokul.in" className="text-blue hover:underline">nithyagokul.in</a> (the “Website“), all pages on the Website and any services provided by or on this Website (“Services“).
               </p>
               <p>
                 By accessing either directly or through a hyperlink, the Website, and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the Terms of Service including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation vendors, buyers, customers, merchants, browsers and/ or contributors of content.
@@ -130,7 +130,7 @@ export default function TermsConditionsPage() {
                     It is strictly prohibited to copy, duplicate or reproduce our resources, or to sell, trade, or resell them.
                   </li>
                   <li>
-                    Depending on the service offering chosen by any person or entity while checking out on various service pages on the website, <a href="https://www.nithyagokul.com" className="text-blue hover:underline">nithyagokul.com</a> requires a specimen signature as part of the order documentation, whether it is for completion of the order or not, and this signature can be used for self-attestation.
+                    Depending on the service offering chosen by any person or entity while checking out on various service pages on the website, <a href="https://www.nithyagokul.in" className="text-blue hover:underline">nithyagokul.in</a> requires a specimen signature as part of the order documentation, whether it is for completion of the order or not, and this signature can be used for self-attestation.
                   </li>
                 </ul>
               </div>
